@@ -8,9 +8,9 @@ public enum SceneEnum
 {
 	Logo = 0,				//Logo
 	Title,					//Title
-	Music_Select,
-	GamePlay,
-	Result,
+	Music_Select,			//音楽選択
+	GamePlay,				//ゲームメイン
+	Result,					//結果計算
 	Option,					//Option
 	Null,					//Last One
 }
