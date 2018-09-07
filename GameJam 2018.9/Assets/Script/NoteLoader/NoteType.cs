@@ -9,5 +9,11 @@ using UnityEngine;
 
 public enum NoteType
 {
-
+    Null = 0,
+    Tap = 1,
+    Long_Down = 2,
+    Long_Up = 3,
+    Combine = 4,
+    Hit_Down = 5,
+    Hit_Up = 6,
 }

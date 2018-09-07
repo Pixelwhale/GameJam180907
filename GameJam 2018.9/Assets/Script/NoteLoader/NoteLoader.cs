@@ -8,14 +8,22 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class NoteLoader : MonoBehaviour 
+public class NoteLoader
 {
-	public void LoadNotesFile(string fileName, ref List<string> result, ref int bpm)
+	/// <summary>
+	/// 譜面を読み込む
+	/// </summary>
+	/// <param name="fileName">ファイル名</param>
+	/// <param name="result">読み込んだ文字列</param>
+	/// <param name="bpm">BPM</param>
+	public static void LoadNotesFile(string fileName, ref List<NoteType> upperNotes, ref List<NoteType> lowerNotes, ref int bpm)
 	{
-		FileStream fs = new FileStream("Resources/csv/" + fileName, FileMode.Open, FileAccess.Read);
-		StreamReader sr = new StreamReader(fs);
+		TextAsset textAsset = Resources.Load<TextAsset>("csv/" + fileName);
+		if(textAsset == null)							//ファイルなし
+			return;
 
-		result = new List<string>();
+		StreamReader sr = new StreamReader(new MemoryStream(textAsset.bytes));
+		List<string> result = new List<string>();
 
 		string bpmString = sr.ReadLine();				//First line
 		bpm = int.Parse(bpmString.Split(',')[1]);		//BPM取得
@@ -25,8 +33,25 @@ public class NoteLoader : MonoBehaviour
 			string line = sr.ReadLine();				//読み込む
 			result.Add(line);							//List追加
 		}
-
 		sr.Close();
-		fs.Close();
+
+		TranslateNotes(result[0], ref upperNotes);		//notes translate
+		TranslateNotes(result[1], ref lowerNotes);
+	}
+
+	private static void TranslateNotes(string noteString, ref List<NoteType> notes)
+	{
+		string[] noteStrings = noteString.Split(',');	//分解
+		for(int i = 1; i < noteStrings.Length; ++i)
+		{
+			if(noteStrings[i] == "")					//Notesなし
+			{
+				notes.Add(NoteType.Null);
+				continue;
+			}
+
+			int note = int.Parse(noteStrings[i]);
+			notes.Add((NoteType)note);					//List追加
+		}
 	}
 }
