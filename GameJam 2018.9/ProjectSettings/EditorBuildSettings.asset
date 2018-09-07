@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Master/Logo.unity
     guid: a0ba9aa868f45744c84f31139e2d245d
+  - enabled: 1
+    path: Assets/Scenes/Master/Title.unity
+    guid: 14047b8868efc4b44923ceb9e2b3e24d
+  - enabled: 1
+    path: Assets/Scenes/Master/Music_Select.unity
+    guid: a75ee2af40cbd3a458292880d9e7e3cc
+  - enabled: 1
+    path: Assets/Scenes/Master/GamePlay.unity
+    guid: 48eef6a417ac17345bb92dc7f939c799
+  - enabled: 1
+    path: Assets/Scenes/Master/Result.unity
+    guid: 8b836050be4110048ba0786a10f274f3
+  - enabled: 1
+    path: Assets/Scenes/Master/Option.unity
+    guid: ab8af82f1328b0b4ba838b7c081943e8
   m_configObjects: {}
