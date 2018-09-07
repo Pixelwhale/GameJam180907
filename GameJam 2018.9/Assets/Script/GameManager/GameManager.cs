@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour
 {
 	public static GameManager Instance = null;                  //GameManagerのインスタンス
     [SerializeField]
-    private SceneLoader sceneLoader;
+    private SceneLoader sceneLoader;                            //SceneManager
     [SerializeField]
     private SoundManager soundManager;                          //SoundManager
     [SerializeField]
     private SystemSE systemSEManager;                           //SystemSEManager
+    [SerializeField]
+    private Fader sceneFader;                                   //SceneFader
 
 	private void Awake()
     {
@@ -61,4 +63,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     /// <value></value>
     public SceneLoader SceneLoader { get{ return sceneLoader; } }
+
+    /// <summary>
+    /// シーンフェーダー
+    /// </summary>
+    /// <value></value>
+    public Fader SceneFader { get{ return sceneFader; } }
 }
