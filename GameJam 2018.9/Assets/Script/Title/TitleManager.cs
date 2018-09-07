@@ -59,4 +59,34 @@ public class TitleManager : MonoBehaviour
 		isMenuIn = false;
 		menuPanel.MenuOut();			//Menu　Animate
 	}
+
+	/// <summary>
+	/// MusicSelect画面へ
+	/// </summary>
+	public void MusicSelect()
+	{
+		sceneFader.FadeOut();			//Fade　Out
+		StartCoroutine(LoadScene(SceneEnum.Music_Select));
+	}
+
+	public void Option()
+	{
+		sceneFader.FadeOut();			//Fade　Out
+		StartCoroutine(LoadScene(SceneEnum.Option));
+	}
+
+	/// <summary>
+	/// loadScene
+	/// </summary>
+	/// <param name="scene">Scene名</param>
+	/// <returns></returns>
+	private IEnumerator LoadScene(SceneEnum scene)
+	{
+		Debug.Log(sceneFader.IsEnd());
+		while(!sceneFader.IsEnd())		//Fade終了しなければ
+		{
+			yield return null;			//待つ
+		}
+		GameManager.Instance.SceneLoader.LoadScene(scene);
+	}
 }

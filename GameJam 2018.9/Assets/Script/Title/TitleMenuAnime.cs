@@ -16,11 +16,17 @@ public class TitleMenuAnime : MonoBehaviour
 		menuAnimator = GetComponent<Animator>();
 	}
 
+	/// <summary>
+	/// Menu Slide In
+	/// </summary>
 	public void MenuIn()
 	{
 		menuAnimator.SetBool("menuIn", true);
 	}
 
+	/// <summary>
+	/// Menu Slide Out
+	/// </summary>
 	public void MenuOut()
 	{
 		menuAnimator.SetBool("menuOut", true);

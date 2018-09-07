@@ -32,4 +32,13 @@ public class Fader : MonoBehaviour
 	{
 		fadeAnimator.SetBool("fadeOut", true);
 	}
+
+	/// <summary>
+	/// Fade終了しているか
+	/// </summary>
+	/// <returns></returns>
+	public bool IsEnd()
+	{
+		return fadeAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f;
+	}
 }
