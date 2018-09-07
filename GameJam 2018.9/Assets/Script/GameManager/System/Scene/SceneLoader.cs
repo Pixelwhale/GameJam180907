@@ -19,7 +19,7 @@ public class SceneLoader : MonoBehaviour
     /// <param name="nextScene">目標のシーン</param>
     public void LoadScene(SceneEnum nextScene)
     {
-        if(nextScene == SceneEnum.Null) return;                 //無効シーン
+        if(nextScene >= SceneEnum.Null) return;                 //無効シーン
         lastScene = currentScene;                               //記録
         currentScene = nextScene;                               //切り替え
         StartCoroutine(LoadSceneAsync());                       //Start Loading
