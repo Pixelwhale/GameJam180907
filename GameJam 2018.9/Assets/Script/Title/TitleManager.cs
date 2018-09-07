@@ -82,7 +82,6 @@ public class TitleManager : MonoBehaviour
 	/// <returns></returns>
 	private IEnumerator LoadScene(SceneEnum scene)
 	{
-		Debug.Log(sceneFader.IsEnd());
 		while(!sceneFader.IsEnd())		//Fade終了しなければ
 		{
 			yield return null;			//待つ
