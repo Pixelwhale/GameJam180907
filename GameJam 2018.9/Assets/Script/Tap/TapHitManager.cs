@@ -32,7 +32,7 @@ public class TapHitManager : MonoBehaviour {
 
         if (Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            //enemyList[0].GetComponent<>.Dead();
+            //enemyList[0].GetComponent<NoteBase>().Dead();
             enemyList.RemoveAt(0);
         }
     }
@@ -42,6 +42,7 @@ public class TapHitManager : MonoBehaviour {
         enemyList.RemoveAt(0);
     }
 
+    //TapとTouchが同じDirectionか判断
     private void TouchUpdate()
     {
         if ((Input.GetTouch(0).position.y > 0 && isUp) || 
