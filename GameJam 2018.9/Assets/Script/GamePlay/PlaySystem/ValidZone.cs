@@ -11,11 +11,13 @@ public class ValidZone : MonoBehaviour
 {
 	private bool currentTouch = false;				//このフレームタッチされたか
 	private bool prevousTouch = false;				//前のフレームタッチされたか
-	private List<INote> notes;
+	private List<INote> notes;						//範囲内Notes
+	private float posX;								//判定中心
 
 	private void Start()
 	{
 		notes = new List<INote>();
+		posX = transform.position.x;
 	}
 
 	/// <summary>
@@ -48,10 +50,10 @@ public class ValidZone : MonoBehaviour
 
 	private void Update()
 	{
-		if(notes.Count <= 0)											//入ってなければ更新しない
+		if(notes.Count <= 0)													//入ってなければ更新しない
 			return;
 
-		int score = notes[0].CheckInput(IsTrigger(), IsDown());			//インターフェースを通して処理する
+		int score = notes[0].CheckInput(posX, IsTrigger(), IsDown());			//インターフェースを通して処理する
 		//------------------------------
 		// Score 追加の処理
 		//------------------------------

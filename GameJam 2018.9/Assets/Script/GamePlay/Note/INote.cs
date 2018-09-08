@@ -8,6 +8,6 @@ using System.Collections.Generic;
 
 public interface INote
 {
-	int CheckInput(bool isTrigger, bool isDown);
+	int CheckInput(float checkLineX, bool isTrigger, bool isDown);
 	bool IsDead();
 }
