@@ -13,6 +13,8 @@ public class ValidZone : MonoBehaviour
 	private bool prevousTouch = false;				//前のフレームタッチされたか
 	private List<INote> notes;						//範囲内Notes
 	private float posX;								//判定中心
+	[SerializeField]
+	private HitEffect hitEffect;					//Noteが押されたときのEffect
 
 	private void Start()
 	{
@@ -50,10 +52,10 @@ public class ValidZone : MonoBehaviour
 
 	private void Update()
 	{
-		if(notes.Count <= 0)													//入ってなければ更新しない
+		if(notes.Count <= 0)											//入ってなければ更新しない
 			return;
 
-		int score = notes[0].CheckInput(posX, IsTrigger(), IsDown());			//インターフェースを通して処理する
+		int score = notes[0].CheckInput(posX, IsTrigger(), IsDown(), hitEffect);			//インターフェースを通して処理する
 		//------------------------------
 		// Score 追加の処理
 		//------------------------------
