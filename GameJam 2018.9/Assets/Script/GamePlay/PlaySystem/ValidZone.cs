@@ -54,7 +54,6 @@ public class ValidZone : MonoBehaviour
 	{
 		if(notes.Count <= 0)											//入ってなければ更新しない
 			return;
-
 		int score = notes[0].CheckInput(posX, IsTrigger(), IsDown(), hitEffect);			//インターフェースを通して処理する
 		//------------------------------
 		// Score 追加の処理
@@ -66,11 +65,14 @@ public class ValidZone : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D other)
     {
 		notes.Add(other.GetComponent<INote>());							//管理リスト追加
-		Debug.Log(notes[0]);
     }
 
 	void OnTriggerExit2D(Collider2D other)
     {
-        notes.RemoveAt(0);												//管理リストから削除
+		INote note = other.GetComponent<INote>();
+		note.MissProcess();
+
+		if(!note.IsDead())												//死んだ場合はUpdateからすでに削除される
+        	notes.RemoveAt(0);											//管理リストから削除
     }
 }

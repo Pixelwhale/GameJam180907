@@ -9,5 +9,6 @@ using System.Collections.Generic;
 public interface INote
 {
 	int CheckInput(float checkLineX, bool isTrigger, bool isDown, HitEffect effect);
+	void MissProcess();
 	bool IsDead();
 }
