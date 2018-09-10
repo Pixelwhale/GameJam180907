@@ -10,8 +10,7 @@ using UnityEngine;
 public class HitEffect : MonoBehaviour 
 {
 	[SerializeField]
-	private ParticleSystem[] oneShots;			//一回のエフェクト配列
-	private int oneShotIndex = 0;				//使用する添え字
+	private ParticleSystem oneShots;			//一回のエフェクト配列
 	[SerializeField]
 	private ParticleSystem longHit;				//長押しエフェクト
 
@@ -20,9 +19,8 @@ public class HitEffect : MonoBehaviour
 	/// </summary>
 	public void PlayOneHit()
 	{
-		oneShots[oneShotIndex].Play(true);		//配列のエフェクトをプレイ
-		++oneShotIndex;							//添え字更新
-		oneShotIndex %= 2;
+		oneShots.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+		oneShots.Play(true);
 	}
 
 	/// <summary>
