@@ -47,7 +47,7 @@ public class PushState : ILongNoteState
 
 	private void CheckTimeUp(float checkLineX)
 	{
-		if(endTransform.position.x < checkLineX)	//お尻が来た場合
+		if(endTransform.position.x <= checkLineX)	//お尻が来た場合
 		{
 			isEnd = true;				//終了
 			isClear = true;				//クリア

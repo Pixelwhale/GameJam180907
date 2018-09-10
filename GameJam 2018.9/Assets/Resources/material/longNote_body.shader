@@ -4,6 +4,8 @@
 	{
 		_MainTex ("Texture", 2D) = "white" {}
 		_Color("Color", Color) = (1, 1, 1, 1)
+		_RimTex ("RimTexture", 2D) = "white" {}
+		_RimColor("RimColor", Color) = (1, 1, 1, 1)
 
 		[IntRange] _StencilRef ("Stencil Reference", Range(0, 255)) = 1
 		[Enum(CompareFunction)] _StencilComp ("Stencil Compare Function", Float) = 0
@@ -59,16 +61,19 @@
 			}
 			
 			sampler2D _MainTex;
+			sampler2D _RimTex;
 			half _TileX;
 			half _OffsetX;
 			half4 _Color;
+			half4 _RimColor;
 
 			fixed4 frag (v2f i) : SV_Target
 			{
 				i.uv.x *= _TileX;
 				i.uv.x += _OffsetX;
 				fixed4 col = tex2D(_MainTex, i.uv) * _Color;
-				return col;
+				fixed4 rim = tex2D(_RimTex, i.uv) * _RimColor;
+				return col + rim;
 			}
 			ENDCG
 		}

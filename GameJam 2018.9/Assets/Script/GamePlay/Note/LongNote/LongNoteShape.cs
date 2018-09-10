@@ -17,6 +17,8 @@ public class LongNoteShape : MonoBehaviour
 	[SerializeField]
 	private GameObject body;							//体
 	[SerializeField]
+	private SpriteRenderer bodyRenderer;
+	[SerializeField]
 	private GameObject mask;							//マスク
 
 	/// <summary>
@@ -25,11 +27,13 @@ public class LongNoteShape : MonoBehaviour
 	public void InitLength()
 	{
 		float length = endPos.position.x - headPos.position.x;					//全体の長さ
+		float scale = (length / basicLength);									//長さの倍率	
 		Vector3 center = (headPos.position + endPos.position) / 2.0f;			//中心部
 		Vector3 bodyScale = body.transform.localScale;							//Bodyのスケール
-		bodyScale.x *= (length / basicLength);									//長さの倍率
+		bodyScale.x *= scale;
 		body.transform.position = center;										//位置
 		body.transform.localScale = bodyScale;									//長さ
+		bodyRenderer.material.SetFloat("_TileX", scale);
 
 		AdjustMaskLength();														//マスク調整
 	}
