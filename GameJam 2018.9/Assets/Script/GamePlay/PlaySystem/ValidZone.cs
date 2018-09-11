@@ -16,21 +16,11 @@ public class ValidZone : MonoBehaviour
 	[SerializeField]
 	private HitEffect hitEffect;                    //Noteが押されたときのEffect
 
-    //追加部分　===============
-    //2018.09.11 金　淳元　Perfect,Great　判定
-    private List<Enum_score> scoreLists;
-    //追加部分　===============
-
 
     private void Start()
 	{
 		notes = new List<INote>();
 		posX = transform.position.x;
-
-        //追加部分　===============
-        //2018.09.11 金　淳元　Perfect,Great　判定
-        scoreLists = new List<Enum_score>();
-        //追加部分　===============
 }
 
 /// <summary>
@@ -65,7 +55,7 @@ public void UpdatePreviousTouch()
 	{
 		if(notes.Count <= 0)											//入ってなければ更新しない
 			return;
-		int score = notes[0].CheckInput(posX, IsTrigger(), IsDown(), hitEffect);            //インターフェースを通して処理する
+		Enum_score score = notes[0].CheckInput(posX, IsTrigger(), IsDown(), hitEffect);            //インターフェースを通して処理する
         //------------------------------
         // Score 追加の処理
 		//------------------------------

@@ -35,7 +35,6 @@ public class PushState : ILongNoteState
 			return;
 		}
 
-		//Todo: 押された長さを計算
 		DelayHead();					//ヘッド固定
 		CheckTimeUp(checkLineX);		//クリアかを確認
 	}
@@ -76,7 +75,6 @@ public class PushState : ILongNoteState
 
 	public ILongNoteState NextState()
 	{
-		//Todo: 押された時間を渡す
 		return new LongNoteEndState(isClear);
 	}
 }

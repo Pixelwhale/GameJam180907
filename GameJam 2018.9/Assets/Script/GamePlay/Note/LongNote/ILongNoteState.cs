@@ -13,6 +13,6 @@ public interface ILongNoteState
 	void MissProcess();
 	bool IsEnd();
 	bool IsDead();
-	int Score();
+	Enum_score Score();
 	ILongNoteState NextState();
 }

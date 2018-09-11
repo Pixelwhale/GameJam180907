@@ -9,4 +9,5 @@ public enum Enum_score {
     Miss,
     Great,
 	Perfect,
+    Null,
 }

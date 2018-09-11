@@ -55,7 +55,7 @@ public class UnpushState : ILongNoteState
 		return false;
 	}
 
-	public int Score()
+	public Enum_score Score()
 	{
 		return 0;
 	}

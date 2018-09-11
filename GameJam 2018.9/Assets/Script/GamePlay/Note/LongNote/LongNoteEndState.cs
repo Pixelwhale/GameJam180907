@@ -38,7 +38,7 @@ public class LongNoteEndState : ILongNoteState
 		return isClear;
 	}
 
-	public int Score()
+	public Enum_score Score()
 	{
 		if(!giveScore)
 		{
@@ -47,7 +47,7 @@ public class LongNoteEndState : ILongNoteState
 			return 0;
 		}
 		
-		return 0;
+		return Enum_score.Null;
 	}
 
 	public ILongNoteState NextState()
