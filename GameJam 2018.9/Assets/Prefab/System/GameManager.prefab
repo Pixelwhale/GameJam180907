@@ -61,6 +61,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1453967126312434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4786355087508286}
+  - component: {fileID: 114465629234851936}
+  m_Layer: 0
+  m_Name: GamePlayInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1700959592830778
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +168,7 @@ Transform:
   - {fileID: 4389937053830282}
   - {fileID: 4313838233690002}
   - {fileID: 224162585121760552}
+  - {fileID: 4786355087508286}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -167,6 +184,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4557677180749612}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4786355087508286
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1453967126312434}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4557677180749612}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &95503555162674878
 Animator:
@@ -255,6 +285,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d33bfc9c706b2f245b05f1af1cce04c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114465629234851936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1453967126312434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7239397f4f1d704c9b820a713526de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114667722848811864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,6 +335,7 @@ MonoBehaviour:
   soundManager: {fileID: 114667722848811864}
   systemSEManager: {fileID: 114157281719643380}
   sceneFader: {fileID: 114418550089572906}
+  gameInfo: {fileID: 114465629234851936}
 --- !u!114 &114941597663551218
 MonoBehaviour:
   m_ObjectHideFlags: 1
