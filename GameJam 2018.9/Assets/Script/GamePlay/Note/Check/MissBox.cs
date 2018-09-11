@@ -11,9 +11,6 @@ public class MissBox : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 9)
-        {
-            scoreManager.AddScore(Enum_score.Miss);
-        }
+        scoreManager.AddScore(Enum_score.Miss);
     }
 }
