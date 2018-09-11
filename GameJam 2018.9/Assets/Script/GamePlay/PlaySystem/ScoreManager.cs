@@ -11,6 +11,9 @@ public class ScoreManager : MonoBehaviour
 {
 	private int[] count;				//ScoreCount
 
+    //2018.09.11 金　淳元  combo
+    private int combo = 0;
+
 	/// <summary>
 	/// 初期化処理
 	/// </summary>
@@ -31,6 +34,9 @@ public class ScoreManager : MonoBehaviour
 	{
 		if(score == Enum_score.Null) 
 			return;
+
+        //comboの更新
+        ComboUpdate(score);
 		++count[(int)score];
 	}
 	
@@ -45,4 +51,16 @@ public class ScoreManager : MonoBehaviour
 			return 0;
 		return count[(int)score];
 	}
+
+    //combの更新
+    private void ComboUpdate(Enum_score score)
+    {
+        if (score == Enum_score.Miss)
+        {
+            combo = 0;
+            return;
+        }
+        ++combo;
+    }
+
 }
