@@ -89,11 +89,9 @@ public class UnpushState : ILongNoteState
     {
         if (distance < Distance_Perfect.distance_perfect)
         {
-            //Todo：Perfectのエフェクト
             score = Enum_score.Perfect;
             return;
         }
-        //Todo：Greatのエフェクト
         score = Enum_score.Great;
     }//追加部分　===============
 }

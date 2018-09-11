@@ -45,7 +45,6 @@ public class LongNoteEndState : ILongNoteState
 		if(!giveScore && isClear)
 		{
 			giveScore = true;
-			//Todo:Scoreを計算
 			return Enum_score.Perfect;
 		}
 		
