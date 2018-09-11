@@ -13,11 +13,22 @@ public class ScoreManager : MonoBehaviour
 
     //2018.09.11 金　淳元  combo
     private int combo = 0;
+    //2018.09.11 金　淳元  パーセント
+    private int full_note;
+    private int score_current = 0;
+    private float percent = 0.0f;
 
-	/// <summary>
-	/// 初期化処理
-	/// </summary>
-	public void Initialize()
+    void Start()
+    {
+        //Todo
+        full_note = 16;//後に設定
+        //全部のNoteに2を掛ける
+    }
+
+    /// <summary>
+    /// 初期化処理
+    /// </summary>
+    public void Initialize()
 	{
 		count = new int[(int)Enum_score.Null];
 		for(int i = 0; i < count.Length; ++i)
@@ -37,6 +48,8 @@ public class ScoreManager : MonoBehaviour
 
         //comboの更新
         ComboUpdate(score);
+        //percentの更新
+        PercentUpdate(score);
 		++count[(int)score];
 	}
 	
@@ -61,6 +74,16 @@ public class ScoreManager : MonoBehaviour
             return;
         }
         ++combo;
+    }
+
+    //percentの更新
+    private void PercentUpdate(Enum_score score)
+    {
+        if (score == Enum_score.Miss) return;
+        if (score == Enum_score.Perfect) ++score_current;
+        ++score_current;
+        percent = (float)score_current / (float)full_note;
+        percent = Mathf.Min(1.0f, percent);
     }
 
 }
