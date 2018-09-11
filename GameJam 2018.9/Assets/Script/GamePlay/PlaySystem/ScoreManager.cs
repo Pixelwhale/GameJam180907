@@ -9,6 +9,8 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour 
 {
+    [SerializeField]
+    private ComboDisplay display;
 	private int[] count;				//ScoreCount
 
     //2018.09.11 金　淳元  combo
@@ -71,9 +73,11 @@ public class ScoreManager : MonoBehaviour
         if (score == Enum_score.Miss)
         {
             combo = 0;
+            display.ResetCombo();
             return;
         }
         ++combo;
+        display.AddCombo(combo);
     }
 
     //percentの更新
