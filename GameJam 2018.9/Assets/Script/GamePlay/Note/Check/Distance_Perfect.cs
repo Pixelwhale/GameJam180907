@@ -3,10 +3,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class Distance_Perfect : MonoBehaviour {
-
-    [Header("Perfectを判断する距離")]
+public class Distance_Perfect {
     public static readonly float distance_perfect = 0.2f;
 }
