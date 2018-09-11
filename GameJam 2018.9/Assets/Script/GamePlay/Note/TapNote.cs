@@ -30,10 +30,22 @@ public class TapNote : MonoBehaviour, INote
         //追加部分　===============
 
         isDead = true;
-		effect.PlayOneHit();
+		PlayEffect(effect);
 		Destroy(gameObject, 0.1f);
 		return score;
 	}
+
+    private void PlayEffect(HitEffect effect)
+    {
+        effect.PlayOneHit();
+        if(score == Enum_score.Perfect)
+        {
+            effect.PlayPerfect();
+            return;
+        }
+        if(score == Enum_score.Great)
+            effect.PlayGreat();
+    }
 
 	public void MissProcess()
 	{

@@ -36,14 +36,26 @@ public class UnpushState : ILongNoteState
 
 		isEnd = true;						//終了
 		pushPos = headTransform.position;	//押された点を記録
-		effect.PlayLongHit();				//プレイパーティクル
 
         //追加部分　===============
         //2018.09.11 金　淳元　Perfect,Great　判定
         float distance = Mathf.Abs(pushPos.x - checkLineX);
         DistanceCheck(distance);
         //追加部分　===============
+		PlayEffect(effect);
     }
+
+	private void PlayEffect(HitEffect effect)
+	{
+		effect.PlayLongHit();				//プレイパーティクル
+		if(score == Enum_score.Perfect)
+        {
+            effect.PlayPerfect();
+            return;
+        }
+        if(score == Enum_score.Great)
+            effect.PlayGreat();
+	}
 
     public void MissProcess()
 	{

@@ -13,6 +13,11 @@ public class HitEffect : MonoBehaviour
 	private ParticleSystem oneShots;			//一回のエフェクト配列
 	[SerializeField]
 	private ParticleSystem longHit;				//長押しエフェクト
+	[SerializeField]
+	private ParticleSystem perfect;				//Score Perfect
+	[SerializeField]
+	private ParticleSystem great;				//Score Great
+
 
 	/// <summary>
 	/// 一回のHitエフェクト
@@ -39,5 +44,17 @@ public class HitEffect : MonoBehaviour
 	public void StopLongHit()
 	{
 		longHit.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+	}
+
+	public void PlayPerfect()
+	{
+		perfect.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+		perfect.Play();
+	}
+
+	public void PlayGreat()
+	{
+		great.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+		great.Play();
 	}
 }

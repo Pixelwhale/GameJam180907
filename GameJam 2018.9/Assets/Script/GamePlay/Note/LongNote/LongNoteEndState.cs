@@ -21,6 +21,8 @@ public class LongNoteEndState : ILongNoteState
 	public void CheckInput(float checkLineX, bool isTrigger, bool isDown, HitEffect effect)
 	{
 		effect.StopLongHit();
+		if(isClear && !giveScore)
+			effect.PlayPerfect();
 	}
 
 	public void MissProcess()
