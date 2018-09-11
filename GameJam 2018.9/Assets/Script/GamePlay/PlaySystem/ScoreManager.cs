@@ -29,6 +29,8 @@ public class ScoreManager : MonoBehaviour
 	/// <param name="score">Score　Type</param>
 	public void AddScore(Enum_score score)
 	{
+		if(score == Enum_score.Null) 
+			return;
 		++count[(int)score];
 	}
 	
@@ -39,6 +41,8 @@ public class ScoreManager : MonoBehaviour
 	/// <returns></returns>
 	public int GetScore(Enum_score score)
 	{
+		if(score == Enum_score.Null) 
+			return 0;
 		return count[(int)score];
 	}
 }
