@@ -11,12 +11,18 @@ public class SelectSceneManager : MonoBehaviour
 {
 	[SerializeField]
 	private MusicSelectManager musicManager;
+	private SoundManager soundManager;
+	private GamePlayInfo playInfo;
+	private DifficultyEnum difficulty;
 	private Fader sceneFader;			//Scene Fader
 
 	void Start()
 	{
 		sceneFader = GameManager.Instance.SceneFader;
+		soundManager = GameManager.Instance.SoundManager;
+		playInfo = GameManager.Instance.GamePlayInfo;
 		sceneFader.FadeIn();			//Fade In
+		difficulty = DifficultyEnum.Normal;
 	}
 
 	/// <summary>
@@ -24,7 +30,8 @@ public class SelectSceneManager : MonoBehaviour
 	/// </summary>
 	public void GamePlay()
 	{
-		GameManager.Instance.SoundManager.SetGamePlayMusic(musicManager.SelectedMusic);		//音楽設定
+		soundManager.SetGamePlayMusic(musicManager.SelectedMusic);		//音楽設定
+		playInfo.GamePlayName = musicManager.SelectedMusic.name + "_" + difficulty.ToString();
 		sceneFader.FadeOut();			//Fade　Out
 		StartCoroutine(LoadScene(SceneEnum.GamePlay));
 	}

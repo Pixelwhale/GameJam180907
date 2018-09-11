@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     private SystemSE systemSEManager;                           //SystemSEManager
     [SerializeField]
     private Fader sceneFader;                                   //SceneFader
+    [SerializeField]
+    private GamePlayInfo gameInfo;                              //GameInfo
 
 	private void Awake()
     {
@@ -69,4 +71,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     /// <value></value>
     public Fader SceneFader { get{ return sceneFader; } }
+
+     /// <summary>
+    /// ゲームプレイの情報
+    /// </summary>
+    /// <value></value>
+    public GamePlayInfo GamePlayInfo { get{ return gameInfo; } }
 }

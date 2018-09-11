@@ -1,16 +1,13 @@
-﻿using System.Collections;
+﻿//------------------------------------------------------
+// 作成日：2018.9.10
+// 作成者：林 佳叡
+// 内容：難易度Enum
+//------------------------------------------------------
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class DifficultyEnum : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public enum DifficultyEnum
+{
+	Normal,
+	Hard,
 }

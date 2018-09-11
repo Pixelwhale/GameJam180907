@@ -11,7 +11,7 @@ public class TapNote : MonoBehaviour, INote
 {
 	private bool isDead = false;
 
-    public int CheckInput(float checkLineX, bool isTrigger, bool isDown, HitEffect effect)
+    public Enum_score CheckInput(float checkLineX, bool isTrigger, bool isDown, HitEffect effect)
 	{
 		if(!isTrigger || isDead)
 			return 0;
