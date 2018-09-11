@@ -18,7 +18,7 @@ public class NoteMgr : MonoBehaviour
     {
         m_upperNotes = new List<NoteType>();
         m_lowerNotes = new List<NoteType>();
-        NoteLoader.LoadNotesFile("test", ref m_upperNotes, ref m_lowerNotes, ref m_bpm);
+        NoteLoader.LoadNotesFile("BlackestLuxuryCar", ref m_upperNotes, ref m_lowerNotes, ref m_bpm);
 
         AddNote(m_upperNotes, 3.0f);
         AddNote(m_lowerNotes, -3.0f);
@@ -46,17 +46,18 @@ public class NoteMgr : MonoBehaviour
             switch (noteList[time])
             {
                 case NoteType.Tap:
-                    AddTapNote(new Vector2(60 * speed / m_bpm * time, y));
+                    AddTapNote(new Vector2(15 * speed / m_bpm * time, y));
                     break;
                 case NoteType.Long_Down:
                     longNoteHead = time;
                     break;
                 case NoteType.Long_Up:
-                    AddLongNote(new Vector2(60 * speed / m_bpm * longNoteHead, y), new Vector2(60 * speed / m_bpm * time, y));
+                    AddLongNote(new Vector2(15 * speed / m_bpm * longNoteHead, y), new Vector2(15 * speed / m_bpm * time, y));
                     break;
             }
         }
     }
+
     private void AddTapNote(Vector2 position)
     {
         GameObject note = Instantiate(tapNotePrefab, this.transform);
