@@ -14,18 +14,29 @@ public class ValidZone : MonoBehaviour
 	private List<INote> notes;						//範囲内Notes
 	private float posX;								//判定中心
 	[SerializeField]
-	private HitEffect hitEffect;					//Noteが押されたときのEffect
+	private HitEffect hitEffect;                    //Noteが押されたときのEffect
 
-	private void Start()
+    //追加部分　===============
+    //2018.09.11 金　淳元　Perfect,Great　判定
+    private List<Enum_score> scoreLists;
+    //追加部分　===============
+
+
+    private void Start()
 	{
 		notes = new List<INote>();
 		posX = transform.position.x;
-	}
 
-	/// <summary>
-	/// 前のフレームのInput更新
-	/// </summary>
-	public void UpdatePreviousTouch()
+        //追加部分　===============
+        //2018.09.11 金　淳元　Perfect,Great　判定
+        scoreLists = new List<Enum_score>();
+        //追加部分　===============
+}
+
+/// <summary>
+/// 前のフレームのInput更新
+/// </summary>
+public void UpdatePreviousTouch()
 	{
 		prevousTouch = currentTouch;
 		currentTouch = false;
@@ -54,9 +65,9 @@ public class ValidZone : MonoBehaviour
 	{
 		if(notes.Count <= 0)											//入ってなければ更新しない
 			return;
-		int score = notes[0].CheckInput(posX, IsTrigger(), IsDown(), hitEffect);			//インターフェースを通して処理する
-		//------------------------------
-		// Score 追加の処理
+		int score = notes[0].CheckInput(posX, IsTrigger(), IsDown(), hitEffect);            //インターフェースを通して処理する
+        //------------------------------
+        // Score 追加の処理
 		//------------------------------
 		if(notes[0].IsDead())											//死んだ場合
 			notes.RemoveAt(0);

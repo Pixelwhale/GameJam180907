@@ -32,9 +32,15 @@ public class UnpushState : ILongNoteState
 		isEnd = true;						//終了
 		pushPos = headTransform.position;	//押された点を記録
 		effect.PlayLongHit();				//プレイパーティクル
-	}
 
-	public void MissProcess()
+        //追加部分　===============
+        //2018.09.11 金　淳元　Perfect,Great　判定
+        float distance = Mathf.Abs(pushPos.x - checkLineX);
+        DistanceCheck(distance);
+        //追加部分　===============
+    }
+
+    public void MissProcess()
 	{
 		//Todo: 全体半透明にする
 	}
@@ -58,4 +64,19 @@ public class UnpushState : ILongNoteState
 	{
 		return new PushState(headTransform, bodyTransform, endTransform, pushPos);
 	}
+
+    //追加部分　===============
+    //2018.09.11 金　淳元
+    //perfect great 判定 
+    private void DistanceCheck(float distance)
+    {
+        if (distance < Distance_Perfect.distance_perfect)
+        {
+            //Todo：Perfectのエフェクト
+            Debug.Log("Perfect");
+            return;
+        }
+        //Todo：Greatのエフェクト
+        Debug.Log("Great");
+    }//追加部分　===============
 }
