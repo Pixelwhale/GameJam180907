@@ -122,7 +122,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4761494792453424, guid: c5f00c1d61e69e3459716f9092b79b2e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4761494792453424, guid: c5f00c1d61e69e3459716f9092b79b2e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -162,6 +162,14 @@ Prefab:
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 261369018}
+    - target: {fileID: 4982024030187456, guid: c5f00c1d61e69e3459716f9092b79b2e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801326749034742, guid: c5f00c1d61e69e3459716f9092b79b2e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5f00c1d61e69e3459716f9092b79b2e, type: 2}
   m_IsPrefabParent: 0
