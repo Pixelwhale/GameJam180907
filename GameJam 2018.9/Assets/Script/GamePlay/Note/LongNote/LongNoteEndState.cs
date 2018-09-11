@@ -27,7 +27,6 @@ public class LongNoteEndState : ILongNoteState
 
 	public void MissProcess()
 	{
-		return;
 	}
 
 	public bool IsEnd()

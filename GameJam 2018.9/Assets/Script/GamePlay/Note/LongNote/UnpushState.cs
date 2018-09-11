@@ -59,7 +59,8 @@ public class UnpushState : ILongNoteState
 
     public void MissProcess()
 	{
-		//Todo: 全体半透明にする
+		headTransform.parent.GetComponent<Animator>().SetBool("isDead", true);
+		bodyTransform.GetComponent<Animator>().SetBool("isDead", true);
 	}
 
 	public bool IsEnd()
