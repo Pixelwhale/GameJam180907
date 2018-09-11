@@ -11,10 +11,15 @@ public class TapNote : MonoBehaviour, INote
 {
 	private bool isDead = false;
 
-    public int CheckInput(float checkLineX, bool isTrigger, bool isDown, HitEffect effect)
+    //追加部分　===============
+    //2018.09.11 金　淳元　Perfect,Great　判定
+    private Enum_score score;
+    //追加部分　===============
+
+    public Enum_score CheckInput(float checkLineX, bool isTrigger, bool isDown, HitEffect effect)
 	{
 		if(!isTrigger || isDead)
-			return 0;
+			return Enum_score.Null;
 
         //Todo: Perfect, great, good?
 
@@ -27,7 +32,7 @@ public class TapNote : MonoBehaviour, INote
         isDead = true;
 		effect.PlayOneHit();
 		Destroy(gameObject, 0.1f);
-		return 0;
+		return score;
 	}
 
 	public void MissProcess()
@@ -48,11 +53,11 @@ public class TapNote : MonoBehaviour, INote
         if (distance < Distance_Perfect.distance_perfect)
         {
             //Todo：Perfectのエフェクト
-            Debug.Log("Perfect");
+            score = Enum_score.Perfect;
             return;
         }
         //Todo：Greatのエフェクト
-        Debug.Log("Great");
+        score = Enum_score.Great;
     }//追加部分　===============
 
 
