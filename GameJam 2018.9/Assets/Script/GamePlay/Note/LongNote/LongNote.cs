@@ -46,7 +46,7 @@ public class LongNote : MonoBehaviour, INote
 	public bool IsDead()
 	{
 		if(noteState.IsDead())						//クリアの場合は削除
-			Destroy(gameObject, 0.1f);
+			Destroy(gameObject);
 		return noteState.IsDead();
 	}
 

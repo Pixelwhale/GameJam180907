@@ -31,7 +31,7 @@ public class TapNote : MonoBehaviour, INote
 
         isDead = true;
 		PlayEffect(effect);
-		Destroy(gameObject, 0.1f);
+		Destroy(gameObject);
 		return score;
 	}
 
@@ -73,4 +73,4 @@ public class TapNote : MonoBehaviour, INote
     }//追加部分　===============
 
 
-    }
+}
