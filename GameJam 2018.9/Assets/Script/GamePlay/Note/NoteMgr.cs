@@ -5,11 +5,18 @@ using UnityEngine;
 public class NoteMgr : MonoBehaviour
 {
     public float speed = 10.0f;
-    private List<NoteType> m_upperNotes, m_lowerNotes;
     public GameObject tapNotePrefab;
     public GameObject longNotePrefab;
+
+
+    private List<NoteType> m_upperNotes, m_lowerNotes;
     private int m_bpm;
-    public bool m_startFlag;
+
+    private bool m_startFlag;
+    [SerializeField]
+    private GameObject gamePlayInput;
+
+    private int noteCount;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -20,6 +27,7 @@ public class NoteMgr : MonoBehaviour
         m_lowerNotes = new List<NoteType>();
         NoteLoader.LoadNotesFile("BlackestLuxuryCar", ref m_upperNotes, ref m_lowerNotes, ref m_bpm);
 
+        noteCount = 0;
         AddNote(m_upperNotes, 3.0f);
         AddNote(m_lowerNotes, -3.0f);
     }
@@ -47,12 +55,15 @@ public class NoteMgr : MonoBehaviour
             {
                 case NoteType.Tap:
                     AddTapNote(new Vector2(15 * speed / m_bpm * time, y));
+                    ++noteCount;
                     break;
                 case NoteType.Long_Down:
                     longNoteHead = time;
+                    ++noteCount;
                     break;
                 case NoteType.Long_Up:
                     AddLongNote(new Vector2(15 * speed / m_bpm * longNoteHead, y), new Vector2(15 * speed / m_bpm * time, y));
+                    ++noteCount;
                     break;
             }
         }
@@ -75,5 +86,10 @@ public class NoteMgr : MonoBehaviour
     {
         m_startFlag = true;
         GetComponent<AudioSource>().Play();
+        gamePlayInput.GetComponent<CheckPointAnime>().PlayAnimation(m_bpm);
+    }
+
+    public int GetNoteCount(){
+        return noteCount;
     }
 }

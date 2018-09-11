@@ -10,7 +10,7 @@ using UnityEngine;
 public class CheckPointAnime : MonoBehaviour 
 {
 	private Animator checkpointAnime;
-	void Start () 
+	void Awake () 
 	{
 		checkpointAnime = GetComponent<Animator>();
 		checkpointAnime.SetBool("isPlay", false);
@@ -18,7 +18,7 @@ public class CheckPointAnime : MonoBehaviour
 
 	public void PlayAnimation(int bpm)
 	{
-		checkpointAnime.speed = bpm / 60.0f;
+		checkpointAnime.speed = bpm / 120.0f;
 		checkpointAnime.SetBool("isPlay", true);
 	}
 }
