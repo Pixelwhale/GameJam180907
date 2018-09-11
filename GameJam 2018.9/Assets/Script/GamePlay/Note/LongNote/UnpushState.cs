@@ -17,7 +17,7 @@ public class UnpushState : ILongNoteState
 
     //追加部分　===============
     //2018.09.11 金　淳元　Perfect,Great　判定
-    private Enum_score score;
+    private Enum_score score = Enum_score.Null;
     //追加部分　===============
 
     public UnpushState(Transform headTransform, Transform bodyTransform, Transform endTransform)
