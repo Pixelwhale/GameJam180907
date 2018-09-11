@@ -24,8 +24,9 @@ public class LongNoteShape : MonoBehaviour
 	/// <summary>
 	/// 長さを初期化（頭と終わりの部分を設定した後に初期化）
 	/// </summary>
-	public void InitLength()
+	public void InitLength(Vector3 endPosition)
 	{
+		endPos.position = endPosition;
 		float length = endPos.position.x - headPos.position.x;					//全体の長さ
 		float scale = (length / basicLength);									//長さの倍率	
 		Vector3 center = (headPos.position + endPos.position) / 2.0f;			//中心部
