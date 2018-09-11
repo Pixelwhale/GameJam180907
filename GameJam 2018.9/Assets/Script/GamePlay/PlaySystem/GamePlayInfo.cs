@@ -9,6 +9,7 @@ using UnityEngine;
 
 public class GamePlayInfo : MonoBehaviour 
 {
+	[SerializeField]
 	private string fileName;
 
 	/// <summary>
