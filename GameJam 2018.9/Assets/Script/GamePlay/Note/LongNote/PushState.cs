@@ -68,9 +68,9 @@ public class PushState : ILongNoteState
 		return false;
 	}
 
-	public int Score()
+	public Enum_score Score()
 	{
-		return 0;
+		return Enum_score.Null;
 	}
 
 	public ILongNoteState NextState()
