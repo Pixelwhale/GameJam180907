@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 50118093349800030}
   - component: {fileID: 61748015894691082}
   - component: {fileID: 114562036957190354}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MissBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
