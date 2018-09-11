@@ -5,12 +5,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MissBox : MonoBehaviour {
+    [Header("スコアマネージャー")]
+    [SerializeField]
+    private ScoreManager scoreManager;
 
 	void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == 9)
         {
-            //Todo: scoreManagerにMissをreturn；
+            scoreManager.AddScore(Enum_score.Miss);
         }
     }
 }

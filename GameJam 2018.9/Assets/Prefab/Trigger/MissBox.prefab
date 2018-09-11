@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4400377095837086}
   - component: {fileID: 50118093349800030}
   - component: {fileID: 61748015894691082}
-  - component: {fileID: 114012598787753512}
+  - component: {fileID: 114562036957190354}
   m_Layer: 0
   m_Name: MissBox
   m_TagString: Untagged
@@ -87,7 +87,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114012598787753512
+--- !u!114 &114562036957190354
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -95,6 +95,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1877468696244742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d70d8b5ca33814744ad8d80b72e47fbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c51c2f47416ff74487643d7097842a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 114189657137415462, guid: 9afa12f4408b8a546b19645086017a90,
+    type: 2}
