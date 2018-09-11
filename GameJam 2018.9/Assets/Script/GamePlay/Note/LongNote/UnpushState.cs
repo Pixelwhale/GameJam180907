@@ -15,7 +15,12 @@ public class UnpushState : ILongNoteState
 	private Transform bodyTransform;
 	private Transform endTransform;
 
-	public UnpushState(Transform headTransform, Transform bodyTransform, Transform endTransform)
+    //追加部分　===============
+    //2018.09.11 金　淳元　Perfect,Great　判定
+    private Enum_score score;
+    //追加部分　===============
+
+    public UnpushState(Transform headTransform, Transform bodyTransform, Transform endTransform)
 	{
 		this.headTransform = headTransform;
 		this.bodyTransform = bodyTransform;
@@ -57,7 +62,7 @@ public class UnpushState : ILongNoteState
 
 	public Enum_score Score()
 	{
-		return 0;
+		return score;
 	}
 
 	public ILongNoteState NextState()
@@ -73,10 +78,10 @@ public class UnpushState : ILongNoteState
         if (distance < Distance_Perfect.distance_perfect)
         {
             //Todo：Perfectのエフェクト
-            Debug.Log("Perfect");
+            score = Enum_score.Perfect;
             return;
         }
         //Todo：Greatのエフェクト
-        Debug.Log("Great");
+        score = Enum_score.Great;
     }//追加部分　===============
 }
