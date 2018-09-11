@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour {
     private GameObject soundBuffer;                 //Prefab
 
     private List<GameObject> buffers = new List<GameObject>();               //Sound Buffer
+    private GameObject gamePlayMusic;               //GamePlayの音楽Buffer
     private string currentBgm = "";                 //現在の音楽
 
     private float maxVolume = 1.0f;                 //最大音量
@@ -90,5 +91,27 @@ public class SoundManager : MonoBehaviour {
             }
             sound.CurrentState = FadeState.LerpToMax;
         }
+    }
+
+    /// <summary>
+    /// GamePlayの音楽を設定
+    /// </summary>
+    /// <param name="clip"></param>
+    public void SetGamePlayMusic(AudioClip clip)
+    {
+        if(gamePlayMusic) Destroy(gamePlayMusic);
+        gamePlayMusic = Instantiate(soundBuffer, transform);                   //新しいBuffer作成
+        gamePlayMusic.GetComponent<SoundBuffer>().Initialize();
+        gamePlayMusic.GetComponent<SoundBuffer>().SetVolume(maxVolume);        //StartVolume設定
+        gamePlayMusic.GetComponent<SoundBuffer>().SetMaxVolume(maxVolume);     //最大音量設定
+        gamePlayMusic.GetComponent<SoundBuffer>().SetClip(clip);               //音源設定
+    }
+
+    /// <summary>
+    /// GamePlayの音楽を流す
+    /// </summary>
+    public void PlayGameMusic()
+    {
+        gamePlayMusic.GetComponent<SoundBuffer>().Play(false);
     }
 }
