@@ -26,7 +26,7 @@ public class LongNote : MonoBehaviour, INote
 		noteShape = GetComponent<LongNoteShape>();
 	}
 
-	public int CheckInput(float checkLineX, bool isTrigger, bool isDown, HitEffect effect)
+	public Enum_score CheckInput(float checkLineX, bool isTrigger, bool isDown, HitEffect effect)
 	{
 		if(noteState.IsEnd()) 						//終了の場合、状態遷移
 			noteState = noteState.NextState();
