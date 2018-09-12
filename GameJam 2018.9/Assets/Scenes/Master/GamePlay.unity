@@ -182,6 +182,21 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114517304072473124, guid: 18178a5a2d3c3574e805f1b5d13fb1a6,
+        type: 2}
+      propertyPath: m_Length
+      value: 3.9127042
+      objectReference: {fileID: 0}
+    - target: {fileID: 114651299385056058, guid: 18178a5a2d3c3574e805f1b5d13fb1a6,
+        type: 2}
+      propertyPath: m_Length
+      value: 4.068957
+      objectReference: {fileID: 0}
+    - target: {fileID: 114435895044186132, guid: 18178a5a2d3c3574e805f1b5d13fb1a6,
+        type: 2}
+      propertyPath: m_Length
+      value: 3.277968
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18178a5a2d3c3574e805f1b5d13fb1a6, type: 2}
   m_IsPrefabParent: 0
@@ -843,7 +858,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1154202213
 RectTransform:

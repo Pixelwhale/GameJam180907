@@ -24,12 +24,14 @@ public class ComboDisplay : MonoBehaviour
 	public void AddCombo(int combo)
 	{
 		comboAnime.SetBool("isCombo", true);
+		comboAnime.Play("Combo", -1, 0);
 		int digit = 0;
 		for(int i = 0; combo > 0; ++i)
 		{
 			int count = combo % 10;
 			combo /= 10;
 			numbersBuffer[i].GetComponent<Image>().sprite = numbers[count];
+			numbersBuffer[i].SetParent(buffer);
 			++digit;
 		}
 		for(int i = digit - 1; i >= 0; --i)
