@@ -10,18 +10,27 @@ using UnityEngine;
 public class TapNote : MonoBehaviour, INote
 {
 	private bool isDead = false;
+    private bool isDebug = GamePlayDebugMode.isDebug;
 
     //追加部分　===============
     //2018.09.11 金　淳元　Perfect,Great　判定
     private Enum_score score;
     //追加部分　===============
 
+
+
     public Enum_score CheckInput(float checkLineX, bool isTrigger, bool isDown, HitEffect effect)
 	{
+#if UNITY_EDITOR
+        if(isDebug && !isDead)
+        {
+            score = Enum_score.Null;
+            DebugMode(checkLineX, effect);
+            return score;
+        }
+#endif
 		if(!isTrigger || isDead)
 			return Enum_score.Null;
-
-        //Todo: Perfect, great, good?
 
         //追加部分　===============
         //2018.09.11 金　淳元　Perfect,Great　判定
@@ -34,6 +43,18 @@ public class TapNote : MonoBehaviour, INote
 		Destroy(gameObject);
 		return score;
 	}
+
+    private void DebugMode(float checkLineX, HitEffect effect)
+    {
+        float distance = Mathf.Abs(transform.position.x - checkLineX);
+        if (distance < Distance_Perfect.distance_perfect)
+        {
+            isDead = true;
+            score = Enum_score.Perfect;
+            PlayEffect(effect);
+            gameObject.SetActive(false);
+        }
+    }
 
     private void PlayEffect(HitEffect effect)
     {
@@ -64,11 +85,9 @@ public class TapNote : MonoBehaviour, INote
     {
         if (distance < Distance_Perfect.distance_perfect)
         {
-            //Todo：Perfectのエフェクト
             score = Enum_score.Perfect;
             return;
         }
-        //Todo：Greatのエフェクト
         score = Enum_score.Great;
     }//追加部分　===============
 

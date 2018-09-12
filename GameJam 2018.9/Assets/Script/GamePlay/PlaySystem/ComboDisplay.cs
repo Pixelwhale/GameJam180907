@@ -40,7 +40,6 @@ public class ComboDisplay : MonoBehaviour
 
 	public void ResetCombo()
 	{
-		Debug.Log(true);
 		comboAnime.SetBool("isCombo", false);
 		for(int i = 0; i < numbersBuffer.Length; ++i)
 		{
