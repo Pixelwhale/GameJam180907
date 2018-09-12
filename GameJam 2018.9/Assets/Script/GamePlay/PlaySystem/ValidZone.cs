@@ -44,12 +44,12 @@ public class ValidZone : MonoBehaviour
 		currentTouch = isDown;
 	}
 	
-	private bool IsTrigger()
+	public bool IsTrigger()
 	{
 		return currentTouch && !prevousTouch;
 	}
 
-	private bool IsDown()
+	public bool IsDown()
 	{
 		return currentTouch;
 	}
