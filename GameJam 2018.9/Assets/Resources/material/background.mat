@@ -76,8 +76,8 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _BlendColor: {r: 0.046858322, g: 0.24657838, b: 0.254717, a: 1}
+    - _BlendColor: {r: 0.3018868, g: 0.20885359, b: 0.092559636, a: 1}
     - _BlendOffset: {r: 0, g: 0, b: 0, a: 1}
-    - _Color: {r: 0.24951048, g: 0.60223466, b: 0.8396226, a: 0.9372549}
+    - _Color: {r: 0.9056604, g: 0.77206224, b: 0.12388753, a: 0.9372549}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 1}
