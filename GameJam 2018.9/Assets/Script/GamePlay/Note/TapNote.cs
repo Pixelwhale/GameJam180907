@@ -13,11 +13,30 @@ public class TapNote : MonoBehaviour, INote
 #if UNITY_EDITOR
     private bool isDebug = GamePlayDebugMode.isDebug;
 #endif
+    private List<Vector2> positions = new List<Vector2>();
+    private int index = 0;
 
     //追加部分　===============
     //2018.09.11 金　淳元　Perfect,Great　判定
     private Enum_score score;
     //追加部分　===============
+
+    public void Initialize(Vector2 pos)
+    {
+        positions.Add(pos);
+        transform.position = positions[0];
+    }
+
+    public void Next()
+    {
+        ++index;
+        if(index >= positions.Count)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        transform.position = positions[index];
+    }
 
     public Enum_score CheckInput(float checkLineX, bool isTrigger, bool isDown, HitEffect effect)
 	{
@@ -40,7 +59,7 @@ public class TapNote : MonoBehaviour, INote
 
         isDead = true;
 		PlayEffect(effect);
-		Destroy(gameObject);
+		Next();
 		return score;
 	}
 

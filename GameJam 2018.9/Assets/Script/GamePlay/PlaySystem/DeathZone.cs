@@ -11,6 +11,12 @@ public class DeathZone : MonoBehaviour
 {
 	void OnTriggerEnter2D(Collider2D other)
     {
+		TapNote tap = other.GetComponent<TapNote>();
+		if(tap)
+		{
+			tap.Next();
+			return;
+		}
 		Destroy(other.gameObject);
     }
 }
