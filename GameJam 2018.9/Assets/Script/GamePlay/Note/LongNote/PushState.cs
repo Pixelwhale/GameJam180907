@@ -31,6 +31,7 @@ public class PushState : ILongNoteState
 		if(!isDown)						//押されてない場合
 		{
 			isEnd = true;				//終了
+			effect.StopLongHit();
 			MissProcess();				//ミスとしてカウント
 			return;
 		}

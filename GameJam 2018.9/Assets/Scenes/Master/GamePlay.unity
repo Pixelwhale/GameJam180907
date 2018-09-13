@@ -33,9 +33,9 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 16
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
@@ -70,7 +70,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
-    m_ReflectionCompression: 2
+    m_ReflectionCompression: 1
     m_MixedBakeMode: 2
     m_BakeBackend: 0
     m_PVRSampling: 1
@@ -192,6 +192,18 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4011877886219380, guid: 18178a5a2d3c3574e805f1b5d13fb1a6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.052540205
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011877886219380, guid: 18178a5a2d3c3574e805f1b5d13fb1a6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99861884
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011877886219380, guid: 18178a5a2d3c3574e805f1b5d13fb1a6, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 6.0230002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18178a5a2d3c3574e805f1b5d13fb1a6, type: 2}
   m_IsPrefabParent: 0
@@ -201,6 +213,72 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1784806674}
   m_Script: {fileID: 11500000, guid: 001fe18b5c0697b45b49edd49fde6607, type: 3}
+--- !u!1 &236353256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 236353259}
+  - component: {fileID: 236353258}
+  - component: {fileID: 236353257}
+  m_Layer: 11
+  m_Name: DeathZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &236353257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 236353256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ac2022e9f08c446b6abb985d05b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &236353258
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 236353256}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10}
+  m_EdgeRadius: 0
+--- !u!4 &236353259
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 236353256}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -35.68, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &261369018 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114189657137415462, guid: 9afa12f4408b8a546b19645086017a90,
@@ -5762,12 +5840,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114697387296563394, guid: c5f00c1d61e69e3459716f9092b79b2e,
+    - target: {fileID: 114390576143824076, guid: c5f00c1d61e69e3459716f9092b79b2e,
         type: 2}
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 261369018}
-    - target: {fileID: 114390576143824076, guid: c5f00c1d61e69e3459716f9092b79b2e,
+    - target: {fileID: 114697387296563394, guid: c5f00c1d61e69e3459716f9092b79b2e,
         type: 2}
       propertyPath: scoreManager
       value: 
