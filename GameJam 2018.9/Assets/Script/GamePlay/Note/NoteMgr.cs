@@ -21,6 +21,9 @@ public class NoteMgr : MonoBehaviour
 
     private float m_adjustPos;
 
+    [SerializeField]
+    private GameObject playSystemMgr;
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -48,9 +51,9 @@ public class NoteMgr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_startFlag)
-            //transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
-            transform.position = new Vector3(m_adjustPos - speed * GetComponent<AudioSource>().time, 0, 0);
+        if (!m_startFlag) return;
+        transform.position = new Vector3(m_adjustPos - speed * GetComponent<AudioSource>().time, 0, 0);
+        if (!GetComponent<AudioSource>().isPlaying) playSystemMgr.GetComponent<GamePlaySystemManager>().Result();
     }
 
     private void AddNote(List<NoteType> noteList, float y)

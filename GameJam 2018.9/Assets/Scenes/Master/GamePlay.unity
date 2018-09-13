@@ -363,6 +363,7 @@ MonoBehaviour:
     type: 2}
   tapPool: {fileID: 18966239}
   gamePlayInput: {fileID: 1844429633}
+  playSystemMgr: {fileID: 1977694619}
 --- !u!4 &509820434
 Transform:
   m_ObjectHideFlags: 0
