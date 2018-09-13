@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SEManager : MonoBehaviour {
-    [SerializeField]
-    private ValidZone upper;
-    [SerializeField]
-    private ValidZone lower;
+    //[SerializeField]
+    //private ValidZone upper;
+    //[SerializeField]
+    //private ValidZone lower;
 
     [SerializeField]
     private ScoreManager scoreManager;
