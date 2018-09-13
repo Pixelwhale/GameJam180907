@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0567dc0a9ce471448a188afdb062d596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteAmount: 10
+  noteAmount: 20
   tapNote: {fileID: 1478514353322526, guid: 7660ff312ae5c9a43bde263b4fb0a770, type: 2}
 --- !u!4 &18966240
 Transform:
