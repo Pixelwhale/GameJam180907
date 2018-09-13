@@ -24,6 +24,8 @@ public class NoteMgr : MonoBehaviour
     [SerializeField]
     private GameObject playSystemMgr;
 
+    private bool m_endFlag;
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -44,6 +46,7 @@ public class NoteMgr : MonoBehaviour
     void Start()
     {
         m_startFlag = false;
+        m_endFlag = false;
         m_adjustPos = GameManager.Instance.Config.AdjustPos * 0.05f;
         GameStart();
     }
@@ -51,9 +54,13 @@ public class NoteMgr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!m_startFlag) return;
+        if (!m_startFlag || m_endFlag) return;
         transform.position = new Vector3(m_adjustPos - speed * GetComponent<AudioSource>().time, 0, 0);
-        if (!GetComponent<AudioSource>().isPlaying) playSystemMgr.GetComponent<GamePlaySystemManager>().Result();
+        if (GetComponent<AudioSource>().time > 138)
+        {
+            m_endFlag = true;
+            GameOver();
+        }
     }
 
     private void AddNote(List<NoteType> noteList, float y)
@@ -96,11 +103,16 @@ public class NoteMgr : MonoBehaviour
         note.GetComponent<LongNoteShape>().InitLength(end);
     }
 
-    public void GameStart()
+    private void GameStart()
     {
         m_startFlag = true;
         GetComponent<AudioSource>().Play();
         gamePlayInput.GetComponent<CheckPointAnime>().PlayAnimation(m_bpm);
+    }
+
+    private void GameOver()
+    {
+        playSystemMgr.GetComponent<GamePlaySystemManager>().Result();
     }
 
     public int GetNoteCount()
