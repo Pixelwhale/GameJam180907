@@ -37,7 +37,7 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         //Todo
-        full_note = 16;//後に設定
+        full_note = 0;//後に設定
         //全部のNoteに2を掛ける
     }
 
@@ -61,7 +61,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (score == Enum_score.Null)
             return;
-
+        full_note+=2;
         //comboの更新
         ComboUpdate(score);
         //percentの更新
