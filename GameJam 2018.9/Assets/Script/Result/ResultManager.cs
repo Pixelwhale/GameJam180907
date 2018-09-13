@@ -17,7 +17,7 @@ public class ResultManager : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    public void SetResult() {
         if (scoreManager == null) return;
         num_perfect = scoreManager.GetScore(Enum_score.Perfect);
         num_great = scoreManager.GetScore(Enum_score.Great);
