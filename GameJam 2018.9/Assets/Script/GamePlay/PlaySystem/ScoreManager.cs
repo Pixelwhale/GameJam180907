@@ -57,7 +57,6 @@ public class ScoreManager : MonoBehaviour
         //percentの更新
         PercentUpdate(score);
 		++count[(int)score];
-        seManager.PlaySE();
 	}
 	
 	/// <summary>
@@ -81,6 +80,7 @@ public class ScoreManager : MonoBehaviour
             display.ResetCombo();
             return;
         }
+        seManager.PlaySE();
         ++combo;
         display.AddCombo(combo);
     }
