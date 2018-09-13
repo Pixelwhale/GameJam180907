@@ -23,6 +23,7 @@ public class Fader : MonoBehaviour
 	public void FadeIn()
 	{
 		fadeAnimator.SetBool("fadeIn", true);
+		fadeAnimator.Play("FadeIn", -1, 0);
 	}
 
 	/// <summary>
@@ -31,6 +32,7 @@ public class Fader : MonoBehaviour
 	public void FadeOut()
 	{
 		fadeAnimator.SetBool("fadeOut", true);
+		fadeAnimator.Play("FadeOut", -1, 0);
 	}
 
 	/// <summary>

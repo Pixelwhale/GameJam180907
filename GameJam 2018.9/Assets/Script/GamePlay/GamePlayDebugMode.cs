@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class GamePlayDebugMode
 {
-	public static readonly bool isDebug = true;
+	public static readonly bool isDebug = false;
 }

@@ -5,5 +5,5 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Distance_Perfect {
-    public static readonly float distance_perfect = 0.2f;
+    public static readonly float distance_perfect = 0.3f;
 }
