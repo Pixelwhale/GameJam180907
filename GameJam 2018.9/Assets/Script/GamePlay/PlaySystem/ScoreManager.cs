@@ -20,8 +20,9 @@ public class ScoreManager : MonoBehaviour
     private int score_current = 0;
     private float percent = 0.0f;
 
-    //se_test
-    public bool ishit = false;
+    //se関連
+    [SerializeField]
+    private SEManager seManager;
 
     void Start()
     {
@@ -56,9 +57,7 @@ public class ScoreManager : MonoBehaviour
         //percentの更新
         PercentUpdate(score);
 		++count[(int)score];
-
-        //test
-        ishit = true;
+        seManager.PlaySE();
 	}
 	
 	/// <summary>
@@ -70,9 +69,6 @@ public class ScoreManager : MonoBehaviour
 	{
 		if(score == Enum_score.Null) 
 			return 0;
-        //test
-        ishit = true;
-
 		return count[(int)score];
 	}
 
@@ -99,4 +95,5 @@ public class ScoreManager : MonoBehaviour
         percent = Mathf.Min(1.0f, percent);
     }
 
+    
 }
