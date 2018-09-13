@@ -10,14 +10,42 @@ public class NextScene : MonoBehaviour {
     [SerializeField]
     private SceneLoader sceneLoader;
 
-	// Update is called once per frame
-	void Update () {
+    private Fader sceneFader;           //Scene Fader
+
+    void Start()
+    {
+        sceneFader = GameManager.Instance.SceneFader;
+        sceneFader.FadeIn();            //Fade In
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (Input.touchCount <= 0) return;
-        if(Input.GetTouch(0).phase < TouchPhase.Ended && ui_percent.IsEnd())
+        if (Input.GetTouch(0).phase < TouchPhase.Ended && ui_percent.IsEnd())
         {
-            //Titleに移動
-            sceneLoader.LoadScene(SceneEnum.Title);
+            Result();
         }
-        
-	}
+    }
+
+
+    public void Result()
+    {
+        sceneFader.FadeOut();           //Fade　Out
+        StartCoroutine(LoadScene(SceneEnum.Title));
+    }
+
+    /// <summary>
+    /// loadScene
+    /// </summary>
+    /// <param name="scene">Scene名</param>
+    /// <returns></returns>
+    private IEnumerator LoadScene(SceneEnum scene)
+    {
+        while (!sceneFader.IsEnd())     //Fade終了しなければ
+        {
+            yield return null;          //待つ
+        }
+        GameManager.Instance.SceneLoader.LoadScene(scene);
+    }
+
 }
