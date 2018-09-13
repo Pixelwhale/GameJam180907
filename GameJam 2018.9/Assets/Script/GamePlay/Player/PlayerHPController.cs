@@ -12,14 +12,14 @@ public class PlayerHPController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        hp = 100;
+        hp = 999;
         isDead = false;
 	}
 
     void OnTriggerEnter2D(Collider2D other)
     {
         //hp -= other.GetComponent<NoteBase>().dmg;
-        hp -= 20;
+        --hp;
         Debug.Log("hp : " + hp);
         DeadUpdate();
     }
