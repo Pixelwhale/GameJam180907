@@ -77,6 +77,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1613013360150156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4989471955961030}
+  - component: {fileID: 114136784402658248}
+  m_Layer: 0
+  m_Name: Config
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1700959592830778
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +185,7 @@ Transform:
   - {fileID: 4313838233690002}
   - {fileID: 224162585121760552}
   - {fileID: 4786355087508286}
+  - {fileID: 4989471955961030}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -198,6 +215,19 @@ Transform:
   m_Father: {fileID: 4557677180749612}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4989471955961030
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613013360150156}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4557677180749612}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &95503555162674878
 Animator:
   serializedVersion: 3
@@ -216,6 +246,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114136784402658248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613013360150156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4223dc41ba9a04588ae209ce78ba50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114157281719643380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -296,6 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7239397f4f1d704c9b820a713526de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fileName: 
 --- !u!114 &114667722848811864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -336,6 +378,7 @@ MonoBehaviour:
   systemSEManager: {fileID: 114157281719643380}
   sceneFader: {fileID: 114418550089572906}
   gameInfo: {fileID: 114465629234851936}
+  config: {fileID: 114136784402658248}
 --- !u!114 &114941597663551218
 MonoBehaviour:
   m_ObjectHideFlags: 1

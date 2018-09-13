@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     private Fader sceneFader;                                   //SceneFader
     [SerializeField]
     private GamePlayInfo gameInfo;                              //GameInfo
+    [SerializeField]
+    private Config config;
 
 	private void Awake()
     {
@@ -77,4 +79,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     /// <value></value>
     public GamePlayInfo GamePlayInfo { get{ return gameInfo; } }
+
+    public Config Config{ get{ return config; } }
 }

@@ -667,6 +667,7 @@ GameObject:
   - component: {fileID: 982343834}
   - component: {fileID: 982343836}
   - component: {fileID: 982343835}
+  - component: {fileID: 982343837}
   m_Layer: 5
   m_Name: TitlePanel
   m_TagString: Untagged
@@ -726,6 +727,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 982343833}
+--- !u!95 &982343837
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982343833}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a852a90ca16470c4cbb72f7eed892532, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1003165751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,6 +1181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19234c6f6188b61408345aa74f52897c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tapAnime: {fileID: 982343837}
 --- !u!1 &1461890647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1192,6 @@ GameObject:
   - component: {fileID: 1461890648}
   - component: {fileID: 1461890651}
   - component: {fileID: 1461890650}
-  - component: {fileID: 1461890649}
   m_Layer: 5
   m_Name: Tap
   m_TagString: Untagged
@@ -1198,24 +1217,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1461890649
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1461890647}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6457857cc70cd6458f1ea3c0eed57dc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1461890650
 MonoBehaviour:
   m_ObjectHideFlags: 0
