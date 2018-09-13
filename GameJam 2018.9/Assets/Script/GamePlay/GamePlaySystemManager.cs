@@ -6,6 +6,9 @@ public class GamePlaySystemManager : MonoBehaviour
 {
 	private Fader sceneFader;			//Scene Fader
 
+	[SerializeField]
+	private GameObject resultManager;
+	
 	void Start () 
 	{
 		sceneFader = GameManager.Instance.SceneFader;
@@ -15,6 +18,7 @@ public class GamePlaySystemManager : MonoBehaviour
 	public void Result()
 	{
 		sceneFader.FadeOut();			//Fade　Out
+		resultManager.GetComponent<ResultManager>().SetResult();
 		StartCoroutine(LoadScene(SceneEnum.Result));
 	}
 
