@@ -5,13 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SEManager : MonoBehaviour {
-    //[SerializeField]
-    //private ValidZone upper;
-    //[SerializeField]
-    //private ValidZone lower;
-
-    [SerializeField]
-    private ScoreManager scoreManager;
 
     private AudioSource audio;
     private AudioClip se;
@@ -22,18 +15,8 @@ public class SEManager : MonoBehaviour {
         se = audio.clip;
     }
 
-    void Update()
+    public void PlaySE()
     {
-        //if (upper.IsTrigger() || lower.IsTrigger())
-        //{
-        //    Debug.Log("se");
-        //    audio.PlayOneShot(se);
-        //}
-        if (scoreManager.ishit)
-        {
-            audio.PlayOneShot(se);
-            scoreManager.ishit = false;
-        }
+        audio.PlayOneShot(se);
     }
-
 }
