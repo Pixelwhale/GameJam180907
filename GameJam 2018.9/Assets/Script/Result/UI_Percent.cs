@@ -17,6 +17,8 @@ public class UI_Percent : MonoBehaviour {
     private float percent = 0.0f;
     private float percent_plus = 0.0043f;
 
+    private bool isEnd = false;
+
 	// Use this for initialization
 	void Start () {
         percent_end = resultManager.GetPercent();
@@ -30,7 +32,11 @@ public class UI_Percent : MonoBehaviour {
 
     private void PercentPlus()
     {
-        if (percent_end <= percent) return;
+        if (percent_end <= percent)
+        {
+            isEnd = true;
+            return;
+        }
         percent += percent_plus;
         percent = Mathf.Min(percent_end, percent);
     }
@@ -47,8 +53,12 @@ public class UI_Percent : MonoBehaviour {
             int count = number % 10;
             number /= 10;
             numbersBuffer[i].GetComponent<SpriteRenderer>().sprite = numbers[count];
-            numbersBuffer[i].position = new Vector3(numbersBuffer[i].position.x, transform.parent.position.y, 0);
+            numbersBuffer[i].position = new Vector3(numbersBuffer[i].position.x, -2, 0);
         }
     }
 
+    public bool IsEnd()
+    {
+        return isEnd;
+    }
 }
