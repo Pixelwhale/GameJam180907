@@ -9,17 +9,17 @@ public class UiMovement : MonoBehaviour {
     private UiMovement next;
     [SerializeField]
     private UI_Num Num;
-    [SerializeField]
     private ResultManager resultManager;
 
     private bool isStart = false;
     private bool isEnd = false;
 
     private Vector3 velocity = new Vector3(0.5f, 0, 0);
-    private float stop_x = -5;
+    private float stop_x = -4;
 
     void Start()
     {
+        resultManager = GameManager.Instance.Result;
         if (gameObject.name == "perfect") isStart = true;
     }
 

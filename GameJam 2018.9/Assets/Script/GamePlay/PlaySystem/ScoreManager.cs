@@ -10,6 +10,8 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField]
+    private NoteMgr noteManager;
+    [SerializeField]
     private ComboDisplay display;
     private int[] count;				//ScoreCount
 
@@ -36,9 +38,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        //Todo
-        full_note = 0;//後に設定
-        //全部のNoteに2を掛ける
+        full_note = noteManager.GetNoteCount() * 2;
     }
 
     /// <summary>
@@ -61,12 +61,11 @@ public class ScoreManager : MonoBehaviour
     {
         if (score == Enum_score.Null)
             return;
-        full_note+=2;
-        //comboの更新
         ComboUpdate(score);
+        //comboの更新
+        ++count[(int)score];
         //percentの更新
         PercentUpdate(score);
-        ++count[(int)score];
     }
 
     /// <summary>
@@ -102,7 +101,7 @@ public class ScoreManager : MonoBehaviour
         if (score == Enum_score.Miss) return;
         if (score == Enum_score.Perfect) ++score_current;
         ++score_current;
-        percent = (float)score_current / (float)full_note;
+        percent = score_current / (float)full_note;
         percent = Mathf.Min(1.0f, percent);
     }
 

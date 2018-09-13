@@ -7,8 +7,6 @@ using UnityEngine;
 public class NextScene : MonoBehaviour {
     [SerializeField]
     private UI_Percent ui_percent;
-    [SerializeField]
-    private SceneLoader sceneLoader;
 
     private Fader sceneFader;           //Scene Fader
 

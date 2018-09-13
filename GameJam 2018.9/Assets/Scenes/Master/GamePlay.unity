@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0567dc0a9ce471448a188afdb062d596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteAmount: 20
+  noteAmount: 15
   tapNote: {fileID: 1478514353322526, guid: 7660ff312ae5c9a43bde263b4fb0a770, type: 2}
 --- !u!4 &18966240
 Transform:
@@ -1065,6 +1065,11 @@ Prefab:
       propertyPath: seManager
       value: 
       objectReference: {fileID: 556056761}
+    - target: {fileID: 114189657137415462, guid: 9afa12f4408b8a546b19645086017a90,
+        type: 2}
+      propertyPath: noteManager
+      value: 
+      objectReference: {fileID: 509820433}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9afa12f4408b8a546b19645086017a90, type: 2}
   m_IsPrefabParent: 0

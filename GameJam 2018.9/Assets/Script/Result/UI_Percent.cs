@@ -5,8 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UI_Percent : MonoBehaviour {
-    [SerializeField]
-    private ResultManager resultManager;
 
     [SerializeField]
     private Sprite[] numbers;
@@ -21,7 +19,7 @@ public class UI_Percent : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        percent_end = resultManager.GetPercent();
+        percent_end = GameManager.Instance.Result.GetPercent();
 	}
 	
     void Update()

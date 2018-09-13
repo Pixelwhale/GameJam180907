@@ -22,7 +22,6 @@ public class ValidZone : MonoBehaviour
     private void Start()
 	{
 		notes = new List<INote>();
-		scoreManager.Initialize();
 		posX = transform.position.x;
 	}
 
@@ -75,10 +74,10 @@ public class ValidZone : MonoBehaviour
 
 	void OnTriggerExit2D(Collider2D other)
     {	
-		if(notes.Count <= 0 || notes[0] != other.GetComponent<INote>())
+		INote note = other.GetComponent<INote>();
+		if(notes.Count <= 0 || notes[0] != note)
 			return;
 
-		INote note = other.GetComponent<INote>();
 		note.MissProcess();
 
 		if(!note.IsDead())												//死んだ場合はUpdateからすでに削除される

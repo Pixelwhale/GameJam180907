@@ -15,7 +15,8 @@ public class ResultManager : MonoBehaviour {
 
 
     // Use this for initialization
-    public void SetResult(ScoreManager scoreManager) {
+    public void SetResult(ScoreManager scoreManager) 
+    {
         num_perfect = scoreManager.GetScore(Enum_score.Perfect);
         num_great = scoreManager.GetScore(Enum_score.Great);
         num_miss = scoreManager.GetScore(Enum_score.Miss);
