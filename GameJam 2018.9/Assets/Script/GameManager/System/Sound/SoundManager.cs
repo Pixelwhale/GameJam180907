@@ -114,4 +114,13 @@ public class SoundManager : MonoBehaviour {
     {
         gamePlayMusic.GetComponent<SoundBuffer>().Play(false);
     }
+
+    public void StopBGM()
+    {
+        for(int i = 0; i < buffers.Count; ++i)
+        {
+            Destroy(buffers[i]);
+        }
+        buffers.Clear();
+    }
 }
