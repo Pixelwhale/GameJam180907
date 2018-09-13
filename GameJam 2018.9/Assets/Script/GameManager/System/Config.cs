@@ -18,14 +18,19 @@ public class Config : MonoBehaviour {
 
 	private void LoadConfig()
 	{
-		string path = "Application.persistentDataPath/config.txt";
-#if UNITY_EDITOR
-		path = "Assets/resources/config.txt";
-#endif
+		/*string path = "Application.persistentDataPath/config.txt";
 
 		StreamReader sr = new StreamReader(path);
 		adjustPos = int.Parse(sr.ReadLine());
 
+		sr.Close();*/
+		TextAsset textAsset = Resources.Load<TextAsset>("config");
+		if(textAsset == null)							//ファイルなし
+			return;
+
+		StreamReader sr = new StreamReader(new MemoryStream(textAsset.bytes));
+
+		adjustPos = int.Parse(sr.ReadLine());				//First line
 		sr.Close();
 	}
 
@@ -34,13 +39,20 @@ public class Config : MonoBehaviour {
 	public void SaveConfig(int adjustPos)
 	{
 		this.adjustPos = adjustPos;
-		string path = "Application.persistentDataPath/config.txt";
-#if UNITY_EDITOR
-		path = "Assets/resources/config.txt";
-#endif
+		/*string path = "Application.persistentDataPath/config.txt";
 
         StreamWriter sw = new StreamWriter(path, false);
 		sw.WriteLine(adjustPos);
+		sw.Close();*/
+		File.WriteAllText(Application.persistentDataPath + "/config.csv", adjustPos.ToString());
+		/*
+		TextAsset textAsset = Resources.Load<TextAsset>("config");
+		if(textAsset == null)							//ファイルなし
+			return;
+
+		StreamWriter sw = new StreamWriter(new MemoryStream(textAsset.bytes));
+		sw.WriteLine(adjustPos);
 		sw.Close();
+		*/
 	}
 }
