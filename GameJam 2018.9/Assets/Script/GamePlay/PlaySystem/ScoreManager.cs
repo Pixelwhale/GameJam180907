@@ -7,11 +7,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour 
+public class ScoreManager : MonoBehaviour
 {
     [SerializeField]
     private ComboDisplay display;
-	private int[] count;				//ScoreCount
+    private int[] count;				//ScoreCount
 
     //2018.09.11 金　淳元  combo
     private int combo = 0;
@@ -26,6 +26,14 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     private SEManager seManager;
 
+    /// <summary>
+    /// Awake is called when the script instance is being loaded.
+    /// </summary>
+    void Awake()
+    {
+        Initialize();
+    }
+
     void Start()
     {
         //Todo
@@ -37,41 +45,41 @@ public class ScoreManager : MonoBehaviour
     /// 初期化処理
     /// </summary>
     public void Initialize()
-	{
-		count = new int[(int)Enum_score.Null];
-		for(int i = 0; i < count.Length; ++i)
-		{
-			count[i] = 0;
-		}
-	}
+    {
+        count = new int[(int)Enum_score.Null];
+        for (int i = 0; i < count.Length; ++i)
+        {
+            count[i] = 0;
+        }
+    }
 
-	/// <summary>
-	/// Scoreを追加
-	/// </summary>
-	/// <param name="score">Score　Type</param>
-	public void AddScore(Enum_score score)
-	{
-		if(score == Enum_score.Null) 
-			return;
+    /// <summary>
+    /// Scoreを追加
+    /// </summary>
+    /// <param name="score">Score　Type</param>
+    public void AddScore(Enum_score score)
+    {
+        if (score == Enum_score.Null)
+            return;
 
         //comboの更新
         ComboUpdate(score);
         //percentの更新
         PercentUpdate(score);
-		++count[(int)score];
-	}
-	
-	/// <summary>
-	/// Scoreを取得
-	/// </summary>
-	/// <param name="score">Score　Type</param>
-	/// <returns></returns>
-	public int GetScore(Enum_score score)
-	{
-		if(score == Enum_score.Null) 
-			return 0;
-		return count[(int)score];
-	}
+        ++count[(int)score];
+    }
+
+    /// <summary>
+    /// Scoreを取得
+    /// </summary>
+    /// <param name="score">Score　Type</param>
+    /// <returns></returns>
+    public int GetScore(Enum_score score)
+    {
+        if (score == Enum_score.Null)
+            return 0;
+        return count[(int)score];
+    }
 
     //combの更新
     private void ComboUpdate(Enum_score score)
@@ -103,11 +111,11 @@ public class ScoreManager : MonoBehaviour
         max_combo = Mathf.Max(max_combo, combo);
     }
 
-    public int  GetMaxCombo()
+    public int GetMaxCombo()
     {
         return max_combo;
     }
-    
+
     public float GetPercent()
     {
         return percent;
