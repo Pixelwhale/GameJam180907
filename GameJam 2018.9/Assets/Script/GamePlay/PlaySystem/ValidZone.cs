@@ -74,7 +74,10 @@ public class ValidZone : MonoBehaviour
     }
 
 	void OnTriggerExit2D(Collider2D other)
-    {
+    {	
+		if(notes.Count <= 0 || notes[0] != other.GetComponent<INote>())
+			return;
+
 		INote note = other.GetComponent<INote>();
 		note.MissProcess();
 
