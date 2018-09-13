@@ -19,6 +19,8 @@ public class NoteMgr : MonoBehaviour
 
     private int noteCount;
 
+    private float m_adjustPos;
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -39,6 +41,7 @@ public class NoteMgr : MonoBehaviour
     void Start()
     {
         m_startFlag = false;
+        m_adjustPos = GameManager.Instance.Config.AdjustPos * 0.05f;
         GameStart();
     }
 
@@ -47,7 +50,7 @@ public class NoteMgr : MonoBehaviour
     {
         if (m_startFlag)
             //transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
-            transform.position = new Vector3(-speed * GetComponent<AudioSource>().time, 0, 0);
+            transform.position = new Vector3(m_adjustPos - speed * GetComponent<AudioSource>().time, 0, 0);
     }
 
     private void AddNote(List<NoteType> noteList, float y)
