@@ -61,7 +61,6 @@ public class TapNote : MonoBehaviour, INote
 
         isDead = true;
 		PlayEffect(effect);
-		Next();
 		return score;
 	}
 
@@ -73,7 +72,6 @@ public class TapNote : MonoBehaviour, INote
             isDead = true;
             score = Enum_score.Perfect;
             PlayEffect(effect);
-            Next();
         }
     }
 

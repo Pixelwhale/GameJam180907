@@ -62,7 +62,10 @@ public class ValidZone : MonoBehaviour
         scoreManager.AddScore(score);
 		
 		if(notes[0].IsDead())											//死んだ場合
+		{
+			notes[0].Next();
 			notes.RemoveAt(0);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)

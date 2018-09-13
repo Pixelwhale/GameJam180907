@@ -12,4 +12,5 @@ public interface INote
 	Enum_score CheckInput(float checkLineX, bool isTrigger, bool isDown, HitEffect effect);
 	void MissProcess();
 	bool IsDead();
+	void Next();
 }

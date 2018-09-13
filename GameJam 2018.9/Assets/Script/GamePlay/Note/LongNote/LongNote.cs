@@ -59,4 +59,6 @@ public class LongNote : MonoBehaviour, INote
 		offset.x = headPos.localPosition.x;
 		boxCollider.offset = offset;
 	}
+
+	public void Next(){}
 }
