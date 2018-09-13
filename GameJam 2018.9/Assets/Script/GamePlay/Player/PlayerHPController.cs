@@ -26,7 +26,6 @@ public class PlayerHPController : MonoBehaviour {
     {
         //hp -= other.GetComponent<NoteBase>().dmg;
         --Currenthp;
-        Debug.Log("hp : " + Currenthp);
         HpPercentUpdate();
         DeadUpdate();
     }

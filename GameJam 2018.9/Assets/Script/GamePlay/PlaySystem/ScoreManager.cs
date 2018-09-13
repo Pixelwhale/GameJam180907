@@ -20,6 +20,8 @@ public class ScoreManager : MonoBehaviour
     private int score_current = 0;
     private float percent = 0.0f;
 
+    private int max_combo = 0;
+
     //se関連
     [SerializeField]
     private SEManager seManager;
@@ -82,6 +84,7 @@ public class ScoreManager : MonoBehaviour
         }
         seManager.PlaySE();
         ++combo;
+        MaxComboUpdate();
         display.AddCombo(combo);
     }
 
@@ -95,5 +98,14 @@ public class ScoreManager : MonoBehaviour
         percent = Mathf.Min(1.0f, percent);
     }
 
+    private void MaxComboUpdate()
+    {
+        max_combo = Mathf.Max(max_combo, combo);
+    }
+
+    public int  GetMaxCombo()
+    {
+        return max_combo;
+    }
     
 }
