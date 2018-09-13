@@ -35,7 +35,9 @@ public class TapNote : MonoBehaviour, INote
             Destroy(gameObject);
             return;
         }
-        transform.position = positions[index];
+        transform.localPosition = positions[index];
+        score = Enum_score.Null;
+        isDead = false;
     }
 
     public Enum_score CheckInput(float checkLineX, bool isTrigger, bool isDown, HitEffect effect)
@@ -71,7 +73,7 @@ public class TapNote : MonoBehaviour, INote
             isDead = true;
             score = Enum_score.Perfect;
             PlayEffect(effect);
-            gameObject.SetActive(false);
+            Next();
         }
     }
 

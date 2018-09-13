@@ -7,7 +7,8 @@ public class NoteMgr : MonoBehaviour
     public float speed = 10.0f;
     public GameObject tapNotePrefab;
     public GameObject longNotePrefab;
-
+    [SerializeField]
+    private NotePool tapPool;
 
     private List<NoteType> m_upperNotes, m_lowerNotes;
     private int m_bpm;
@@ -26,6 +27,7 @@ public class NoteMgr : MonoBehaviour
         m_upperNotes = new List<NoteType>();
         m_lowerNotes = new List<NoteType>();
         NoteLoader.LoadNotesFile("BlackestLuxuryCar", ref m_upperNotes, ref m_lowerNotes, ref m_bpm);
+        tapPool.GenerateNotes(transform);
 
         noteCount = 0;
         AddNote(m_upperNotes, 2.0f);
@@ -73,8 +75,12 @@ public class NoteMgr : MonoBehaviour
 
     private void AddTapNote(Vector2 position)
     {
+        /*
         GameObject note = Instantiate(tapNotePrefab, this.transform);
         note.transform.localPosition = position;
+        */
+        //2018.9.13　Pool に変更
+        tapPool.InitNotePos(position);
     }
 
     private void AddLongNote(Vector2 head, Vector2 end)

@@ -13,24 +13,49 @@ public class NotePool : MonoBehaviour
 	private int noteAmount;
 	[SerializeField]
 	private GameObject tapNote;
-	private List<GameObject> tapNotes = new List<GameObject>();
+	private List<GameObject> upperTapNotes = new List<GameObject>();
+	private List<GameObject> lowerTapNotes = new List<GameObject>();
 	private Vector2 hidePos = new Vector2(-100, 0);
-	private int tapNoteIndex = 0;
+	private int upperIndex = 0;
+	private int lowerIndex = 0;
 
 	public void GenerateNotes(Transform noteManager)
 	{
 		for(int i = 0; i < noteAmount; ++i)
 		{
 			GameObject tap = Instantiate(tapNote, hidePos, Quaternion.identity, noteManager);
-			tapNotes.Add(tap);
+			upperTapNotes.Add(tap);
+		}
+		for(int i = 0; i < noteAmount; ++i)
+		{
+			GameObject tap = Instantiate(tapNote, hidePos, Quaternion.identity, noteManager);
+			lowerTapNotes.Add(tap);
 		}
 	}
 
-	public void InitializeTapNotes(Vector2 pos)
+	public void InitNotePos(Vector2 pos)
 	{
-		tapNotes[tapNoteIndex].GetComponent<TapNote>().Initialize(pos);
-		++tapNoteIndex;
-		if(tapNoteIndex >= tapNotes.Count)
-			tapNoteIndex = 0;
+		if(pos.y > 0)
+		{
+			InitUpperTapNotes(pos);
+			return;
+		}
+		InitLowerTapNotes(pos);
+	}
+
+	private void InitUpperTapNotes(Vector2 pos)
+	{
+		upperTapNotes[upperIndex].GetComponent<TapNote>().Initialize(pos);
+		++upperIndex;
+		if(upperIndex >= upperTapNotes.Count)
+			upperIndex = 0;
+	}
+
+	private void InitLowerTapNotes(Vector2 pos)
+	{
+		lowerTapNotes[lowerIndex].GetComponent<TapNote>().Initialize(pos);
+		++lowerIndex;
+		if(lowerIndex >= lowerTapNotes.Count)
+			lowerIndex = 0;
 	}
 }
