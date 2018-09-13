@@ -10,35 +10,31 @@ using UnityEngine;
 
 public class Config : MonoBehaviour {
 
-	private float adjustPos;
-	void Start () 
+	private int adjustPos;
+	void Awake () 
 	{
 		LoadConfig();
 	}
 
 	private void LoadConfig()
 	{
-		TextAsset textAsset = Resources.Load<TextAsset>("config");
-		if(textAsset == null)							//ファイルなし
-			return;
+		string path = "Assets/resources/config.txt";
 
-		StreamReader sr = new StreamReader(new MemoryStream(textAsset.bytes));
-		adjustPos = float.Parse(sr.ReadLine());
+		StreamReader sr = new StreamReader(path);
+		adjustPos = int.Parse(sr.ReadLine());
 
 		sr.Close();
 	}
 
-	public float AdjustPos { get { return adjustPos; } }
+	public int AdjustPos { get { return adjustPos; } }
 
-	public void SaveConfig(float adjustPos)
+	public void SaveConfig(int adjustPos)
 	{
 		this.adjustPos = adjustPos;
-		TextAsset textAsset = Resources.Load<TextAsset>("config");
-		if(textAsset == null)							//ファイルなし
-			return;
-		
-		StreamWriter sw = new StreamWriter(new MemoryStream(textAsset.bytes));
+		string path = "Assets/resources/config.txt";
+
+        StreamWriter sw = new StreamWriter(path, false);
 		sw.WriteLine(adjustPos);
-		
+		sw.Close();
 	}
 }

@@ -9,11 +9,13 @@ using UnityEngine;
 
 public class ConfigManager : MonoBehaviour 
 {
+	[SerializeField]
+	private NumberDisplay display;
 	private Config config;
 	private SceneLoader sceneManager;
 	private Fader sceneFader;			//Scene Fader
-	private float adjustPos;
-	
+	private int adjustPos;
+
 
 	void Start () 
 	{
@@ -22,16 +24,21 @@ public class ConfigManager : MonoBehaviour
 		config = GameManager.Instance.Config;
 		sceneFader.FadeIn();			//Fade In
 		adjustPos = config.AdjustPos;
+		display.SetNumber(adjustPos);
 	}
 
 	public void PlusAjustPos()
 	{
-		adjustPos-=0.005f;
+		adjustPos+=5;
+		Mathf.Min(adjustPos, 1000);
+		display.SetNumber(adjustPos);
 	}
 
 	public void MinusAjustPos()
 	{
-		adjustPos-=0.005f;
+		adjustPos-=5;
+		Mathf.Max(adjustPos, -1000f);
+		display.SetNumber(adjustPos);
 	}
 
 	public void BackToTitle()
