@@ -17,8 +17,6 @@ public class TapNote : MonoBehaviour, INote
     private Enum_score score;
     //追加部分　===============
 
-
-
     public Enum_score CheckInput(float checkLineX, bool isTrigger, bool isDown, HitEffect effect)
 	{
 #if UNITY_EDITOR
