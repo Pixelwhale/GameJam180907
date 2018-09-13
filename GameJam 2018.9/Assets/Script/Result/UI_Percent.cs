@@ -53,7 +53,6 @@ public class UI_Percent : MonoBehaviour {
             int count = number % 10;
             number /= 10;
             numbersBuffer[i].GetComponent<SpriteRenderer>().sprite = numbers[count];
-            numbersBuffer[i].position = new Vector3(numbersBuffer[i].position.x, -2, 0);
         }
     }
 

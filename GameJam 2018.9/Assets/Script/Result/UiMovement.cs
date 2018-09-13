@@ -16,7 +16,7 @@ public class UiMovement : MonoBehaviour {
     private bool isEnd = false;
 
     private Vector3 velocity = new Vector3(0.5f, 0, 0);
-    private float stop_x = -8;
+    private float stop_x = -5;
 
     void Start()
     {
@@ -45,6 +45,7 @@ public class UiMovement : MonoBehaviour {
 
     private void CountUpdate()
     {
+        if (Num == null) return;
         Num.isStart = true;
         if (gameObject.name == "perfect")
         {
