@@ -48,7 +48,7 @@ public class UI_Num : MonoBehaviour {
     {
         for (int i = numbersBuffer.Length - 1; i >= 0; --i) 
         {
-            numbersBuffer[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, alpha);
+            numbersBuffer[i].GetComponent<SpriteRenderer>().color = new Color(1,1,1, alpha);
         }
         NumUpdate();
     }
