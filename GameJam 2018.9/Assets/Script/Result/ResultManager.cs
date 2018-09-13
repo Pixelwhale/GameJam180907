@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class ResultManager : MonoBehaviour {
 
-    [SerializeField]
-    private ScoreManager scoreManager;
 
     private int num_perfect = 0;
     private int num_great = 0;
@@ -17,8 +15,7 @@ public class ResultManager : MonoBehaviour {
 
 
     // Use this for initialization
-    public void SetResult() {
-        if (scoreManager == null) return;
+    public void SetResult(ScoreManager scoreManager) {
         num_perfect = scoreManager.GetScore(Enum_score.Perfect);
         num_great = scoreManager.GetScore(Enum_score.Great);
         num_miss = scoreManager.GetScore(Enum_score.Miss);

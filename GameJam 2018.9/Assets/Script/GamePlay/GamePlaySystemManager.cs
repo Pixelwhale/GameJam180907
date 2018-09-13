@@ -5,20 +5,21 @@ using UnityEngine;
 public class GamePlaySystemManager : MonoBehaviour 
 {
 	private Fader sceneFader;			//Scene Fader
-
+	private ResultManager resultManager;
 	[SerializeField]
-	private GameObject resultManager;
+	private ScoreManager scoreManager;
 	
 	void Start () 
 	{
 		sceneFader = GameManager.Instance.SceneFader;
+		resultManager = GameManager.Instance.Result;
 		sceneFader.FadeIn();			//Fade In
 	}
 
 	public void Result()
 	{
 		sceneFader.FadeOut();			//Fade　Out
-		resultManager.GetComponent<ResultManager>().SetResult();
+		resultManager.SetResult(scoreManager);
 		StartCoroutine(LoadScene(SceneEnum.Result));
 	}
 

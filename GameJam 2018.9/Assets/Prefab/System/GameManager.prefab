@@ -379,7 +379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44b3043c8abbee4bbc61792237535b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreManager: {fileID: 0}
 --- !u!114 &114667722848811864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -421,6 +420,7 @@ MonoBehaviour:
   sceneFader: {fileID: 114418550089572906}
   gameInfo: {fileID: 114465629234851936}
   config: {fileID: 114136784402658248}
+  resultManager: {fileID: 114475364324505308}
 --- !u!114 &114941597663551218
 MonoBehaviour:
   m_ObjectHideFlags: 1

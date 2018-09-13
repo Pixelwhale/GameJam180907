@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     private GamePlayInfo gameInfo;                              //GameInfo
     [SerializeField]
     private Config config;
+    [SerializeField]
+    private ResultManager resultManager;
 
 	private void Awake()
     {
@@ -81,4 +83,5 @@ public class GameManager : MonoBehaviour
     public GamePlayInfo GamePlayInfo { get{ return gameInfo; } }
 
     public Config Config{ get{ return config; } }
+    public ResultManager Result { get { return resultManager; } }
 }
