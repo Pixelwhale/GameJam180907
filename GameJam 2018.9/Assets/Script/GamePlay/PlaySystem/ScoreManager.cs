@@ -108,4 +108,8 @@ public class ScoreManager : MonoBehaviour
         return max_combo;
     }
     
+    public float GetPercent()
+    {
+        return percent;
+    }
 }

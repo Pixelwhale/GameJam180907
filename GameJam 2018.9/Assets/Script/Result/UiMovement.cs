@@ -15,7 +15,7 @@ public class UiMovement : MonoBehaviour {
     private bool isStart = false;
     private bool isEnd = false;
 
-    private Vector3 velocity = new Vector3(0.3f, 0, 0);
+    private Vector3 velocity = new Vector3(0.5f, 0, 0);
     private float stop_x = -8;
 
     void Start()
@@ -37,6 +37,7 @@ public class UiMovement : MonoBehaviour {
         {
             CountUpdate();
             next.isStart = true;
+            isEnd = true;
             return;
         }
         transform.position += velocity;
@@ -60,8 +61,12 @@ public class UiMovement : MonoBehaviour {
             Num.SetNum(resultManager.GetMiss());
             return;
         }
-        Num.SetNum(1114);
         Num.SetNum(resultManager.GetMaxCombo());
+    }
+
+    public bool IsEnd()
+    {
+        return isEnd;
     }
 
 }

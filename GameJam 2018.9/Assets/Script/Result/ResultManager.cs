@@ -13,6 +13,7 @@ public class ResultManager : MonoBehaviour {
     private int num_great = 0;
     private int num_miss = 0;
     private int num_maxcombo = 0;
+    private float percent = 0.0f;
 
 
     // Use this for initialization
@@ -22,6 +23,7 @@ public class ResultManager : MonoBehaviour {
         num_great = scoreManager.GetScore(Enum_score.Great);
         num_miss = scoreManager.GetScore(Enum_score.Miss);
         num_maxcombo = scoreManager.GetMaxCombo();
+        percent = scoreManager.GetPercent();
     }
 	
 	public int GetPerfect()
@@ -44,4 +46,8 @@ public class ResultManager : MonoBehaviour {
         return num_maxcombo;
     }
 
+    public float GetPercent()
+    {
+        return percent;
+    }
 }
