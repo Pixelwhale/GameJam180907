@@ -28,8 +28,8 @@ public class NoteMgr : MonoBehaviour
         NoteLoader.LoadNotesFile("BlackestLuxuryCar", ref m_upperNotes, ref m_lowerNotes, ref m_bpm);
 
         noteCount = 0;
-        AddNote(m_upperNotes, 3.0f);
-        AddNote(m_lowerNotes, -3.0f);
+        AddNote(m_upperNotes, 2.0f);
+        AddNote(m_lowerNotes, -2.0f);
     }
 
 
@@ -43,7 +43,9 @@ public class NoteMgr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_startFlag) transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
+        if (m_startFlag)
+            //transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
+            transform.position = new Vector3(-speed * GetComponent<AudioSource>().time, 0, 0);
     }
 
     private void AddNote(List<NoteType> noteList, float y)
@@ -89,7 +91,8 @@ public class NoteMgr : MonoBehaviour
         gamePlayInput.GetComponent<CheckPointAnime>().PlayAnimation(m_bpm);
     }
 
-    public int GetNoteCount(){
+    public int GetNoteCount()
+    {
         return noteCount;
     }
 }
