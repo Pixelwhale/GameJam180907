@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: d87d0e0cc7d54ba4abf674214dd7de5c
+guid: b4f92a50de02f694eb9e9a9cabc74958
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Number_0
-    21300002: Number_1
-    21300004: Number_2
-    21300006: Number_3
-    21300008: Number_4
-    21300010: Number_5
-    21300012: Number_6
-    21300014: Number_7
-    21300016: Number_8
-    21300018: Number_9
+    21300000: Number_maxCombo_0
+    21300002: Number_maxCombo_1
+    21300004: Number_maxCombo_2
+    21300006: Number_maxCombo_3
+    21300008: Number_maxCombo_4
+    21300010: Number_maxCombo_5
+    21300012: Number_maxCombo_6
+    21300014: Number_maxCombo_7
+    21300016: Number_maxCombo_8
+    21300018: Number_maxCombo_9
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -114,7 +114,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Number_0
+      name: Number_maxCombo_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,13 +128,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 360056efa5f0adc4291a8e7ec110e390
+      spriteID: c4f8cee89156887429a6871e45ca08f9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_1
+      name: Number_maxCombo_1
       rect:
         serializedVersion: 2
         x: 64
@@ -148,13 +148,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7639333a2e58394baf2054819b8a005
+      spriteID: 416d7c7e9dbcee64e87a5109a1b55909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_2
+      name: Number_maxCombo_2
       rect:
         serializedVersion: 2
         x: 128
@@ -168,13 +168,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f558d09d2378c04497c570d558e17c9
+      spriteID: 84003650306c25342a30f6041df45e58
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_3
+      name: Number_maxCombo_3
       rect:
         serializedVersion: 2
         x: 192
@@ -188,13 +188,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d600e1e42589f774a83bfad0e0a1e077
+      spriteID: 4202508d6b8db5f4ba350d21c44f4fa0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_4
+      name: Number_maxCombo_4
       rect:
         serializedVersion: 2
         x: 256
@@ -208,13 +208,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1618e67546b67bb40b56967c9bfea828
+      spriteID: 8b9e7bc8b436ebc438e05a994e4a9763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_5
+      name: Number_maxCombo_5
       rect:
         serializedVersion: 2
         x: 320
@@ -228,13 +228,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64bebdb0950a2244399d3edb3b399416
+      spriteID: 367bd9d34228ccd4c8b5c1fec8e2cd3a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_6
+      name: Number_maxCombo_6
       rect:
         serializedVersion: 2
         x: 384
@@ -248,13 +248,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 064672a8e3406844ebc154143fd503cc
+      spriteID: 43ca5477cb4fc6041a36e59b6af7fc5a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_7
+      name: Number_maxCombo_7
       rect:
         serializedVersion: 2
         x: 448
@@ -268,13 +268,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61865f7ed9700cf428952221bf71a59b
+      spriteID: aa8a22fb37801e640be11fd60bde63a6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_8
+      name: Number_maxCombo_8
       rect:
         serializedVersion: 2
         x: 512
@@ -288,13 +288,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb28d9f6bf18b1a4192b16da81fdcbbb
+      spriteID: 33d3f1923c159534db713dbaab5a8e75
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_9
+      name: Number_maxCombo_9
       rect:
         serializedVersion: 2
         x: 576
@@ -308,7 +308,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80cb693361f944e4e8a053c92d0c9af7
+      spriteID: 90f74c73c1afdd64ca5ffb6d2e44048d
       vertices: []
       indices: 
       edges: []
@@ -316,7 +316,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6e7daf32940003e418d1c2ba0939d5a0
+    spriteID: 718ca3159542b7147a13383b48d033da
     vertices: []
     indices: 
     edges: []

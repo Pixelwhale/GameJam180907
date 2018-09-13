@@ -69,6 +69,12 @@ public class TitleManager : MonoBehaviour
 		StartCoroutine(LoadScene(SceneEnum.Music_Select));
 	}
 
+	public void GamePay()
+	{
+		sceneFader.FadeOut();			//Fade　Out
+		StartCoroutine(LoadScene(SceneEnum.GamePlay));
+	}
+
 	public void Option()
 	{
 		sceneFader.FadeOut();			//Fade　Out

@@ -411,6 +411,7 @@ MonoBehaviour:
     type: 2}
   longNotePrefab: {fileID: 1819208389916952, guid: 26e5995b1ddc11b4eb68193310026ede,
     type: 2}
+  tapPool: {fileID: 18966239}
   gamePlayInput: {fileID: 1844429633}
 --- !u!4 &509820434
 Transform:
@@ -5784,11 +5785,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114465629234851936, guid: 6934ad93cb4455641af52a1d5f9ec1a2,
+    - target: {fileID: 114475364324505308, guid: 6934ad93cb4455641af52a1d5f9ec1a2,
         type: 2}
-      propertyPath: fileName
-      value: BlackestLuxuryCar
-      objectReference: {fileID: 0}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 261369018}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6934ad93cb4455641af52a1d5f9ec1a2, type: 2}
   m_IsPrefabParent: 0

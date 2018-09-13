@@ -1,17 +1,21 @@
 fileFormatVersion: 2
-guid: d87d0e0cc7d54ba4abf674214dd7de5c
+guid: b55b18ec01982cb4381220a000a9a755
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Number_0
-    21300002: Number_1
-    21300004: Number_2
-    21300006: Number_3
-    21300008: Number_4
-    21300010: Number_5
-    21300012: Number_6
-    21300014: Number_7
-    21300016: Number_8
-    21300018: Number_9
+    21300000: Number_percent_0
+    21300002: Number_percent_1
+    21300004: Number_percent_2
+    21300006: Number_percent_3
+    21300008: Number_percent_4
+    21300010: Number_percent_5
+    21300012: Number_percent_6
+    21300014: Number_percent_7
+    21300016: Number_percent_8
+    21300018: Number_percent_9
+    21300020: Number_percent_10
+    21300022: Number_percent_11
+    21300024: Number_percent_12
+    21300026: Number_percent_13
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -114,7 +118,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Number_0
+      name: Number_percent_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,13 +132,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 360056efa5f0adc4291a8e7ec110e390
+      spriteID: e00ca1ce0f89ab3408d88e04e2b0530f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_1
+      name: Number_percent_1
       rect:
         serializedVersion: 2
         x: 64
@@ -148,13 +152,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7639333a2e58394baf2054819b8a005
+      spriteID: 63899e1472ae5d4479a93fc459eec7b9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_2
+      name: Number_percent_2
       rect:
         serializedVersion: 2
         x: 128
@@ -168,13 +172,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f558d09d2378c04497c570d558e17c9
+      spriteID: fd696e6013c06f94597a4259d0b3ff15
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_3
+      name: Number_percent_3
       rect:
         serializedVersion: 2
         x: 192
@@ -188,13 +192,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d600e1e42589f774a83bfad0e0a1e077
+      spriteID: b757a0263a8ed494196edb50d8246702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_4
+      name: Number_percent_4
       rect:
         serializedVersion: 2
         x: 256
@@ -208,13 +212,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1618e67546b67bb40b56967c9bfea828
+      spriteID: 4e77371ec7011eb4fb99b3d7b46f36fb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_5
+      name: Number_percent_5
       rect:
         serializedVersion: 2
         x: 320
@@ -228,13 +232,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64bebdb0950a2244399d3edb3b399416
+      spriteID: c6d29b8654dae0a40b2d9fed6950d3bf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_6
+      name: Number_percent_6
       rect:
         serializedVersion: 2
         x: 384
@@ -248,13 +252,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 064672a8e3406844ebc154143fd503cc
+      spriteID: a032fd30c8befbf4aa2c3081be4ccafe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_7
+      name: Number_percent_7
       rect:
         serializedVersion: 2
         x: 448
@@ -268,13 +272,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61865f7ed9700cf428952221bf71a59b
+      spriteID: 84fd4088522034c45a0d2170cc4379e9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_8
+      name: Number_percent_8
       rect:
         serializedVersion: 2
         x: 512
@@ -288,13 +292,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb28d9f6bf18b1a4192b16da81fdcbbb
+      spriteID: 9c33cacda3b2cbe459e8e9a50e47812c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Number_9
+      name: Number_percent_9
       rect:
         serializedVersion: 2
         x: 576
@@ -308,7 +312,87 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80cb693361f944e4e8a053c92d0c9af7
+      spriteID: 84718d5e46477f2438ff27e3216d5048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number_percent_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0cd2cd8dc85904a9dca645bb02ff37
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number_percent_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50732e899ea27f146b05ff2ab66da243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number_percent_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b13d48290a6d24a88530f039758124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number_percent_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f77ff0c1ab21941acf403c92694949
       vertices: []
       indices: 
       edges: []
@@ -316,7 +400,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6e7daf32940003e418d1c2ba0939d5a0
+    spriteID: 9d9e4a74921e5c349ac9c88972459f46
     vertices: []
     indices: 
     edges: []

@@ -10,6 +10,8 @@ using UnityEngine;
 public class TitleMenuAnime : MonoBehaviour 
 {
 	private Animator menuAnimator;
+	[SerializeField]
+	private Animator tapAnime;
 
 	void Start () 
 	{
@@ -22,6 +24,7 @@ public class TitleMenuAnime : MonoBehaviour
 	public void MenuIn()
 	{
 		menuAnimator.SetBool("menuIn", true);
+		tapAnime.SetBool("isMenu", true);
 	}
 
 	/// <summary>
@@ -30,5 +33,6 @@ public class TitleMenuAnime : MonoBehaviour
 	public void MenuOut()
 	{
 		menuAnimator.SetBool("menuOut", true);
+		tapAnime.SetBool("isMenu", false);
 	}
 }
