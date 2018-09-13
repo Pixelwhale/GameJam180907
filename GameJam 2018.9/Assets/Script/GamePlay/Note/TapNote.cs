@@ -10,7 +10,9 @@ using UnityEngine;
 public class TapNote : MonoBehaviour, INote
 {
 	private bool isDead = false;
+#if UNITY_EDITOR
     private bool isDebug = GamePlayDebugMode.isDebug;
+#endif
 
     //追加部分　===============
     //2018.09.11 金　淳元　Perfect,Great　判定
