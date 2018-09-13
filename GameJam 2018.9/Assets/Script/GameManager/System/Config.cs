@@ -18,7 +18,10 @@ public class Config : MonoBehaviour {
 
 	private void LoadConfig()
 	{
-		string path = "Assets/resources/config.txt";
+		string path = "Application.persistentDataPath/config.txt";
+#if UNITY_EDITOR
+		path = "Assets/resources/config.txt";
+#endif
 
 		StreamReader sr = new StreamReader(path);
 		adjustPos = int.Parse(sr.ReadLine());
@@ -31,7 +34,10 @@ public class Config : MonoBehaviour {
 	public void SaveConfig(int adjustPos)
 	{
 		this.adjustPos = adjustPos;
-		string path = "Assets/resources/config.txt";
+		string path = "Application.persistentDataPath/config.txt";
+#if UNITY_EDITOR
+		path = "Assets/resources/config.txt";
+#endif
 
         StreamWriter sw = new StreamWriter(path, false);
 		sw.WriteLine(adjustPos);
