@@ -55,8 +55,8 @@ public class NoteMgr : MonoBehaviour
     void Update()
     {
         if (!m_startFlag || m_endFlag) return;
-        transform.position = new Vector3(m_adjustPos - speed * GetComponent<AudioSource>().time, 0, 0);
-        if (GetComponent<AudioSource>().time > 138)
+        transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
+        if (GetComponent<AudioSource>().time > 136)
         {
             m_endFlag = true;
             GameOver();
