@@ -10,12 +10,18 @@ public class PlayerMovement : MonoBehaviour {
     private ValidZone upperZone;                        //上の判定区
     [SerializeField]
     private ValidZone lowerZone;						//下の判定区
+    private Animator animator;
 
     private Vector3 basePos;                            //基本位置
     private Vector3 movePos;                            //移動する位置
 
     private float count;                                
     private float maxCount = 0.3f;                      
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     // Use this for initialization
     void Start () {
@@ -34,12 +40,14 @@ public class PlayerMovement : MonoBehaviour {
 
     private void UpperMovement()
     {
+        animator.SetBool("isJump", true);
         movePos = new Vector3(basePos.x, -basePos.y, 0);
     }
 
     private void LowerMovement()
     {
         movePos = basePos;
+        animator.SetBool("isJump", false);
     }
 
     private void ReturnLowerUpdate()
@@ -53,6 +61,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             count = 0.0f;
             movePos = basePos;
+            animator.SetBool("isJump", false);
         }
     }
 
