@@ -15,28 +15,18 @@ public class ComboDisplay : MonoBehaviour
 	[SerializeField]
 	private Sprite[] numbers;
 	[SerializeField]
-	private Transform buffer;
-	[SerializeField]
-	private Transform display;
-	[SerializeField]
 	private Transform[] numbersBuffer;
 
 	public void AddCombo(int combo)
 	{
 		comboAnime.SetBool("isCombo", true);
 		comboAnime.Play("Combo", -1, 0);
-		int digit = 0;
-		for(int i = 0; combo > 0; ++i)
+		for(int i = numbersBuffer.Length - 1; combo > 0; --i)
 		{
 			int count = combo % 10;
 			combo /= 10;
 			numbersBuffer[i].GetComponent<Image>().sprite = numbers[count];
-			numbersBuffer[i].SetParent(buffer);
-			++digit;
-		}
-		for(int i = digit - 1; i >= 0; --i)
-		{
-			numbersBuffer[i].SetParent(display);
+			numbersBuffer[i].gameObject.SetActive(true);
 		}
 	}
 
@@ -45,7 +35,7 @@ public class ComboDisplay : MonoBehaviour
 		comboAnime.SetBool("isCombo", false);
 		for(int i = 0; i < numbersBuffer.Length; ++i)
 		{
-			numbersBuffer[i].SetParent(buffer);
+			numbersBuffer[i].gameObject.SetActive(false);
 		}
 	}
 }
