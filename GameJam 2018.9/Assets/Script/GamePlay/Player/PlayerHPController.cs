@@ -5,33 +5,45 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHPController : MonoBehaviour {
-    [Header("プレイヤーのHP")]
-    private int hp;
+    [Header("プレイヤーのMaxHP")]
+    private int Maxhp;
+    [Header("プレイヤーのCurrentHP")]
+    private int Currenthp;
     [Header("死亡フラグ")]
     private bool isDead;
+    [Header("HPバーのパーセンテージ")]
+    private float percent_hp;
 
 	// Use this for initialization
 	void Start () {
-        hp = 999;
+        Maxhp = 999;
+        Currenthp = Maxhp;
+        percent_hp = 1.0f;
         isDead = false;
 	}
 
     void OnTriggerEnter2D(Collider2D other)
     {
         //hp -= other.GetComponent<NoteBase>().dmg;
-        --hp;
-        Debug.Log("hp : " + hp);
+        --Currenthp;
+        Debug.Log("hp : " + Currenthp);
+        HpPercentUpdate();
         DeadUpdate();
     }
 
     private void DeadUpdate()
     {
-        if (hp <= 0 ) isDead = true;
+        if (Currenthp <= 0 ) isDead = true;
     }
 
     public bool IsDead()
     {
         return isDead;
+    }
+
+    private void HpPercentUpdate()
+    {
+        percent_hp = (float)Currenthp / (int)Maxhp;
     }
 
 }
