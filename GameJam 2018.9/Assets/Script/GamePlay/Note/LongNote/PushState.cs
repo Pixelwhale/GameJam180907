@@ -37,7 +37,7 @@ public class PushState : ILongNoteState
 		}
 
 		DelayHead();					//ヘッド固定
-		CheckTimeUp(checkLineX);		//クリアかを確認
+		CheckTimeUp(checkLineX, effect);		//クリアかを確認
 	}
 
 	private void DelayHead()
@@ -45,12 +45,13 @@ public class PushState : ILongNoteState
 		headTransform.position = pushPos;
 	}
 
-	private void CheckTimeUp(float checkLineX)
+	private void CheckTimeUp(float checkLineX, HitEffect effect)
 	{
 		if(endTransform.position.x <= checkLineX + Distance_Perfect.distance_perfect)	//お尻が来た場合
 		{
 			isEnd = true;				//終了
 			isClear = true;				//クリア
+			effect.StopLongHit();
 		}
 	}
 
