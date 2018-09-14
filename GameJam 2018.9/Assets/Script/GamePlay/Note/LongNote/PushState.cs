@@ -11,6 +11,7 @@ public class PushState : ILongNoteState
 {
 	private bool isEnd = false;
 	private bool isClear = false;
+	private static readonly int greateDistance = 1;
 	private Vector3 pushPos;
 	private Transform headTransform;
 	private Transform bodyTransform;
@@ -32,7 +33,7 @@ public class PushState : ILongNoteState
 		{
 			isEnd = true;				//終了
 			effect.StopLongHit();
-			MissProcess();				//ミスとしてカウント
+			CheckScore(checkLineX);
 			return;
 		}
 
@@ -53,6 +54,16 @@ public class PushState : ILongNoteState
 			isClear = true;				//クリア
 			effect.StopLongHit();
 		}
+	}
+
+	private void CheckScore(float checkLineX)
+	{
+		if(Mathf.Abs(endTransform.position.x - checkLineX) < greateDistance)			//範囲内
+		{
+			isClear = true;				//クリア
+			return;
+		}
+		MissProcess();					//ミスとしてカウント
 	}
 
 	public void MissProcess()
