@@ -106,6 +106,7 @@ public class NoteMgr : MonoBehaviour
     private void GameStart()
     {
         m_startFlag = true;
+        transform.position += new Vector3(m_adjustPos, 0, 0);
         GetComponent<AudioSource>().Play();
         gamePlayInput.GetComponent<CheckPointAnime>().PlayAnimation(m_bpm);
     }
